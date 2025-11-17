@@ -172,12 +172,15 @@ export const UsageTreemap = () => {
                   <span className="text-3xl font-bold text-primary ml-4">{usage.percentage}%</span>
                 </div>
                 <div className="space-y-2">
-                  {usage.useCases.map((useCase, idx) => (
-                    <div key={idx} className="flex items-start gap-2">
-                      <span className="text-primary font-bold mt-1">{idx + 1}.</span>
-                      <p className="text-sm text-muted-foreground">{useCase}</p>
-                    </div>
-                  ))}
+                  {usage.useCases.map((useCase, idx) => {
+                    const shortTitle = useCase.split(':')[0];
+                    return (
+                      <div key={idx} className="flex items-start gap-2">
+                        <span className="text-primary font-bold mt-1">{idx + 1}.</span>
+                        <p className="text-sm text-muted-foreground">{shortTitle}</p>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             ))}
