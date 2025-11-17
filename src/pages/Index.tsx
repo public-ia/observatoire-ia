@@ -1,42 +1,55 @@
 import { Hero } from "@/components/Hero";
 import { KeyFindings } from "@/components/KeyFindings";
 import { StudySection } from "@/components/StudySection";
+import { UsageTreemap } from "@/components/UsageTreemap";
+import { CitizenPerception } from "@/components/CitizenPerception";
+import { Recommendations } from "@/components/Recommendations";
 import { Footer } from "@/components/Footer";
 
 const Index = () => {
   const collectivitiesInsights = [
     {
-      title: "Adoption progressive de l'IA",
-      content: "Les collectivités territoriales montrent un intérêt croissant pour l'intelligence artificielle, avec une augmentation significative des projets pilotes et des expérimentations en 2025.",
-      tag: "Tendance"
+      title: "Généralisation des projets data",
+      content: "74% des collectivités de plus de 3 500 habitants ont engagé au moins un projet data en 2025, contre 40% en 2022. Pour les communes de moins de 3 500 habitants, le taux est passé de 6% à 49%.",
+      tag: "Progression"
     },
     {
-      title: "Priorités d'application",
-      content: "Les domaines privilégiés incluent l'optimisation des services publics, la gestion urbaine intelligente, et l'amélioration de la relation citoyen.",
-      tag: "Focus"
+      title: "Implication des directions générales",
+      content: "73% des directions générales sont impliquées dans la gestion des données (contre 53% en 2022), signe d'une prise en main stratégique au plus haut niveau.",
+      tag: "Gouvernance"
     },
     {
-      title: "Défis identifiés",
-      content: "Les principales difficultés rencontrées concernent les compétences internes, les budgets alloués, et les questions de gouvernance des données.",
+      title: "L'essor de l'IA générative",
+      content: "84% des collectivités qui expérimentent l'IA utilisent l'IA générative (contre 52% en 2024). Elle est perçue comme accessible et peu coûteuse, irrigant de nouveaux domaines d'application.",
+      tag: "Innovation"
+    },
+    {
+      title: "Défis de qualité des données",
+      content: "50% des collectivités expérimentées identifient l'accès limité à des données de qualité comme premier obstacle. Le manque de temps (62%) et de compétences (62%) restent des freins majeurs.",
       tag: "Enjeux"
+    },
+    {
+      title: "Objectifs en tension",
+      content: "Priorité à la qualité du service public (83%) et au pilotage (66%), mais recul préoccupant de la transparence comme objectif (43% en 2025 vs 59% en 2024).",
+      tag: "Stratégie"
     }
   ];
 
-  const perceptionInsights = [
+  const maturityInsights = [
     {
-      title: "Confiance nuancée des citoyens",
-      content: "Les Français expriment des attentes élevées concernant l'utilisation de l'IA dans le service public, tout en manifestant des préoccupations légitimes sur la protection des données personnelles.",
-      tag: "Opinion"
+      title: "Structuration de la gouvernance",
+      content: "50% des collectivités de plus de 3 500 habitants ont adopté ou prévoient d'adopter un cadre stratégique. Les conventions partenariales progressent (60% vs 42% en 2024).",
+      tag: "Maturité"
     },
     {
-      title: "Transparence et éthique",
-      content: "Une forte demande de transparence émerge sur les algorithmes utilisés et leurs impacts sur les décisions administratives affectant les citoyens.",
-      tag: "Attentes"
+      title: "IA dans l'administration",
+      content: "45% des projets IA concernent l'administration et la gestion interne, 20% la relation aux usagers. Cependant, 48% des collectivités n'ont donné aucune consigne à leurs agents.",
+      tag: "Adoption"
     },
     {
-      title: "Formation et accompagnement",
-      content: "Les citoyens souhaitent être mieux informés et accompagnés dans la compréhension des technologies d'IA déployées dans les services publics.",
-      tag: "Besoin"
+      title: "Sécurisation juridique",
+      content: "Les clauses data sont mobilisées par 51% des collectivités pour garantir le RGPD (97%) et asseoir le statut public des données (74% en 2025 vs 53% en 2024).",
+      tag: "Conformité"
     }
   ];
 
@@ -47,17 +60,23 @@ const Index = () => {
       
       <StudySection
         title="État des lieux dans les collectivités"
-        subtitle="Baromètre 2025 : Projets et initiatives IA"
+        subtitle="Baromètre 2025 : Une montée en maturité incontestable"
         insights={collectivitiesInsights}
         backgroundColor="bg-card"
       />
       
+      <UsageTreemap />
+      
       <StudySection
-        title="Perception des Français"
-        subtitle="Ipsos-BVA : Gestion des données et utilisation de l'IA"
-        insights={perceptionInsights}
+        title="Gouvernance et Structuration"
+        subtitle="De l'expérimentation à la professionnalisation"
+        insights={maturityInsights}
         backgroundColor="bg-background"
       />
+      
+      <CitizenPerception />
+      
+      <Recommendations />
       
       <Footer />
     </div>
