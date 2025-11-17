@@ -21,24 +21,6 @@ const evolutionData: Array<{
   description: string;
 }> = [
   {
-    metric: "Collectivités data (+3500 hab)",
-    data: [
-      { year: "2022", value: 40 },
-      { year: "2025", value: 74 },
-    ],
-    trend: "up",
-    description: "+34 points en 3 ans",
-  },
-  {
-    metric: "Collectivités data (-3500 hab)",
-    data: [
-      { year: "2022", value: 6 },
-      { year: "2025", value: 49 },
-    ],
-    trend: "up",
-    description: "+43 points en 3 ans",
-  },
-  {
     metric: "Direction générale impliquée",
     data: [
       { year: "2022", value: 53 },
