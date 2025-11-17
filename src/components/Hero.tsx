@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
+import logo from "@/assets/logo-public-ia.png";
 
 export const Hero = () => {
   const scrollToContent = () => {
@@ -14,6 +15,7 @@ export const Hero = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
+          <img src={logo} alt="Public IA" className="h-24 md:h-32 mx-auto mb-8" />
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">Données et IA dans les Territoires</h1>
           <p className="text-xl md:text-2xl mb-4 text-accent-foreground/90">
             Baromètre 2025 : Concilier pratiques administratives et attentes citoyennes
