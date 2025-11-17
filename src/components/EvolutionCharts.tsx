@@ -21,7 +21,7 @@ const evolutionData: Array<{
   description: string;
 }> = [
   {
-    metric: "Direction générale impliquée",
+    metric: "Directions générales impliquées",
     data: [
       { year: "2022", value: 53 },
       { year: "2025", value: 73 },
@@ -30,7 +30,7 @@ const evolutionData: Array<{
     description: "+20 points en 3 ans",
   },
   {
-    metric: "IA générative utilisée",
+    metric: "IA génératives utilisées",
     data: [
       { year: "2024", value: 52 },
       { year: "2025", value: 84 },
