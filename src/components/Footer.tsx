@@ -7,10 +7,18 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
             <h3 className="text-xl font-bold mb-4">Observatoire Data Publica</h3>
-            <p className="text-accent-foreground/80 leading-relaxed">
+            <p className="text-accent-foreground/80 leading-relaxed mb-4">
               Baromètre annuel sur l'état des projets d'intelligence artificielle dans les collectivités territoriales
               françaises.
             </p>
+            <a
+              href="/Observatoire-Data-Publica-Barometre-2025.pdf"
+              download
+              className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
+            >
+              Télécharger l'étude complète (PDF)
+              <ExternalLink className="h-4 w-4" />
+            </a>
           </div>
 
           <div>
