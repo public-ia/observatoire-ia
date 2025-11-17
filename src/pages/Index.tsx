@@ -1,3 +1,4 @@
+import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { KeyFindings } from "@/components/KeyFindings";
 import { StudySection } from "@/components/StudySection";
@@ -55,28 +56,43 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      <Hero />
-      <KeyFindings />
+      <Navigation />
+      <section id="accueil">
+        <Hero />
+      </section>
+      <section id="chiffres-cles">
+        <KeyFindings />
+      </section>
       
-      <StudySection
-        title="État des lieux dans les collectivités"
-        subtitle="Baromètre 2025 : Une montée en maturité incontestable"
-        insights={collectivitiesInsights}
-        backgroundColor="bg-card"
-      />
+      <section id="etat-des-lieux">
+        <StudySection
+          title="État des lieux dans les collectivités"
+          subtitle="Baromètre 2025 : Une montée en maturité incontestable"
+          insights={collectivitiesInsights}
+          backgroundColor="bg-card"
+        />
+      </section>
       
-      <UsageTreemap />
+      <section id="usages-ia">
+        <UsageTreemap />
+      </section>
       
-      <StudySection
-        title="Gouvernance et Structuration"
-        subtitle="De l'expérimentation à la professionnalisation"
-        insights={maturityInsights}
-        backgroundColor="bg-background"
-      />
+      <section id="gouvernance">
+        <StudySection
+          title="Gouvernance et Structuration"
+          subtitle="De l'expérimentation à la professionnalisation"
+          insights={maturityInsights}
+          backgroundColor="bg-background"
+        />
+      </section>
       
-      <CitizenPerception />
+      <section id="perception-citoyens">
+        <CitizenPerception />
+      </section>
       
-      <Recommendations />
+      <section id="recommandations">
+        <Recommendations />
+      </section>
       
       <Footer />
     </div>
