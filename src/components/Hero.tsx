@@ -18,9 +18,7 @@ export const Hero = () => {
           <p className="text-xl md:text-2xl mb-4 text-accent-foreground/90">
             Baromètre 2025 : Concilier pratiques administratives et attentes citoyennes
           </p>
-          <p className="text-lg mb-8 text-accent-foreground/80">
-            Données Observatoire Data Publica × Ipsos-BVA - Octobre 2025
-          </p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
