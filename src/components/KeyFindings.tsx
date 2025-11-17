@@ -16,50 +16,49 @@ export const KeyFindings = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           <StatCard
-            value="XX%"
-            label="Collectivités engagées"
-            icon={Building2}
-            description="des collectivités ont initié au moins un projet IA"
-          />
-          <StatCard
-            value="XX%"
-            label="Perception positive"
-            icon={TrendingUp}
-            description="des Français favorables à l'IA dans le service public"
-          />
-          <StatCard
-            value="XX"
-            label="Projets en cours"
+            value="77%"
+            label="Projets IA engagés"
             icon={Sparkles}
-            description="nombre moyen de projets IA par collectivité"
+            description="des collectivités ont engagé ou prévoient un projet IA"
           />
           <StatCard
-            value="XX%"
-            label="Priorité données"
-            icon={Database}
-            description="considèrent la gestion des données comme prioritaire"
+            value="74%"
+            label="Collectivités data"
+            icon={Building2}
+            description="des collectivités (+3500 hab) ont au moins un projet data"
           />
           <StatCard
-            value="XX%"
-            label="Préoccupation sécurité"
-            icon={ShieldCheck}
-            description="des citoyens préoccupés par la protection des données"
-          />
-          <StatCard
-            value="XX%"
-            label="Adoption en hausse"
+            value="64%"
+            label="Confiance locale"
             icon={Users}
-            description="d'augmentation des projets IA vs 2024"
+            description="des Français font confiance à leur commune"
+          />
+          <StatCard
+            value="84%"
+            label="IA Générative"
+            icon={TrendingUp}
+            description="des projets IA utilisent l'IA générative"
+          />
+          <StatCard
+            value="85%"
+            label="Inquiétude cyber"
+            icon={ShieldCheck}
+            description="des citoyens inquiets des cyberattaques"
+          />
+          <StatCard
+            value="94%"
+            label="Besoin d'information"
+            icon={Database}
+            description="jugent une information claire prioritaire/importante"
           />
         </div>
 
-        <div className="bg-accent/5 rounded-xl p-8 border-2 border-accent/10">
+        <div className="bg-primary/5 rounded-xl p-8 border-2 border-primary/20">
           <h3 className="text-2xl font-bold text-accent mb-4">
-            📊 Note importante
+            📊 Baromètre 2025
           </h3>
           <p className="text-foreground">
-            Les statistiques complètes seront intégrées après extraction des données des documents fournis. 
-            Cette structure présente l'organisation visuelle finale du site.
+            Ces données proviennent du Baromètre 2025 de l'Observatoire Data Publica et de l'enquête Ipsos-BVA sur la perception des Français face à la gestion des données et l'utilisation de l'IA par le service public.
           </p>
         </div>
       </div>
