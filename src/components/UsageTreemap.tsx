@@ -1,6 +1,15 @@
+import { useState } from "react";
 import treemapImage from "@/assets/usages-ia-treemap.png";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 export const UsageTreemap = () => {
+  const [selectedUsage, setSelectedUsage] = useState<number | null>(null);
   const usages = [
     { 
       domain: "Administration et gestion interne", 
@@ -155,7 +164,8 @@ export const UsageTreemap = () => {
             {usages.map((usage, index) => (
               <div 
                 key={index}
-                className="p-6 bg-background rounded-lg border-2 border-border hover:border-primary transition-all hover:shadow-lg"
+                onClick={() => setSelectedUsage(index)}
+                className="p-6 bg-background rounded-lg border-2 border-border hover:border-primary transition-all hover:shadow-lg cursor-pointer"
               >
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-lg font-bold text-foreground">{usage.domain}</h3>
@@ -174,6 +184,47 @@ export const UsageTreemap = () => {
           </div>
         </div>
       </div>
+
+      <Dialog open={selectedUsage !== null} onOpenChange={() => setSelectedUsage(null)}>
+        <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
+          {selectedUsage !== null && (
+            <>
+              <DialogHeader>
+                <DialogTitle className="text-3xl text-accent mb-2">
+                  {usages[selectedUsage].domain}
+                </DialogTitle>
+                <DialogDescription className="text-2xl font-bold text-primary">
+                  {usages[selectedUsage].percentage}% des projets data en cours ou prévus
+                </DialogDescription>
+              </DialogHeader>
+              
+              <div className="mt-6 space-y-6">
+                <h3 className="text-xl font-semibold text-foreground">
+                  Cas d'usages dans les collectivités territoriales
+                </h3>
+                
+                <div className="space-y-4">
+                  {usages[selectedUsage].useCases.map((useCase, idx) => (
+                    <div 
+                      key={idx} 
+                      className="p-4 bg-card rounded-lg border-2 border-border"
+                    >
+                      <div className="flex items-start gap-3">
+                        <span className="text-2xl font-bold text-primary min-w-[32px]">
+                          {idx + 1}.
+                        </span>
+                        <p className="text-foreground leading-relaxed">
+                          {useCase}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
