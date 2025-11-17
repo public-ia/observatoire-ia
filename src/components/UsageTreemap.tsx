@@ -13,7 +13,7 @@ export const UsageTreemap = () => {
   const usages = [
     { 
       domain: "Administration et gestion interne", 
-      percentage: 69,
+      percentage: 45,
       useCases: [
         "Assistance administrative par IA générative : Il s'agit d'un domaine en forte progression dans les usages de l'IA (45% des collectivités ayant engagé un projet IA déclarent des usages sur cette thématique, contre 29% en 2024), principalement grâce à l'utilisation de l'IA générative pour aider les agents dans leurs tâches administratives. L'IA générative est perçue comme la \"locomotive\" ou le \"cheval de Troie\" de l'IA au sein des collectivités, étant utilisée par 84% de celles qui expérimentent l'IA.",
         "Amélioration du pilotage des politiques publiques : L'utilisation des données pour améliorer l'évaluation et le pilotage des politiques publiques est le deuxième objectif prioritaire des collectivités (66% des répondants). Au total, 74% des collectivités de plus de 3 500 habitants utilisent la donnée pour piloter des politiques publiques.",
@@ -22,7 +22,7 @@ export const UsageTreemap = () => {
     },
     { 
       domain: "Environnement", 
-      percentage: 66,
+      percentage: 8,
       useCases: [
         "Gestion de l'environnement : Ce domaine fait partie du trio de tête des usages de la donnée par les collectivités locales.",
         "Collecte de données environnementales : L'utilisation des données implique la mobilisation de capteurs variés pour mesurer, par exemple, la qualité de l'air et les températures. Le déploiement de réseaux de capteurs a fortement progressé en 2025 (27% des collectivités en sont dotées, contre 19% l'an dernier).",
@@ -31,7 +31,7 @@ export const UsageTreemap = () => {
     },
     { 
       domain: "Mobilité", 
-      percentage: 60,
+      percentage: 10,
       useCases: [
         "Optimisation du trafic urbain : 72% des Français sont d'accord avec l'idée que le service public utilise l'IA pour optimiser la gestion du trafic urbain, notamment en exploitant les données des automobilistes en temps réel.",
         "Amélioration de la gestion des déplacements : Les acteurs publics, y compris les collectivités locales, utilisent les données pour améliorer la gestion des déplacements.",
@@ -40,7 +40,7 @@ export const UsageTreemap = () => {
     },
     { 
       domain: "Aménagement du territoire", 
-      percentage: 57,
+      percentage: 14,
       useCases: [
         "Urbanisme : 70% des Français estiment que l'IA jouera un rôle essentiel ou important dans l'urbanisme et l'aménagement du territoire.",
         "Égalité territoriale : 30% des Français considèrent que l'usage des données peut améliorer l'aménagement du territoire et l'égalité territoriale, en particulier entre le monde rural et les villes.",
@@ -49,7 +49,7 @@ export const UsageTreemap = () => {
     },
     { 
       domain: "Énergie et éclairage", 
-      percentage: 55,
+      percentage: 6,
       useCases: [
         "Efficacité énergétique des bâtiments : 82% des Français sont favorables à ce que le service public ait recours à l'IA pour réduire l'éclairage et le chauffage des bâtiments publics en fonction des mesures de fréquentation en temps réel.",
         "Gestion des consommations énergétiques : 80% des Français estiment que l'IA aura un rôle essentiel ou important dans la gestion des consommations énergétiques.",
@@ -58,7 +58,7 @@ export const UsageTreemap = () => {
     },
     { 
       domain: "Patrimoine", 
-      percentage: 53,
+      percentage: 6,
       useCases: [
         "Amélioration de la qualité du service : Améliorer la qualité du service public est la principale priorité des collectivités lorsqu'elles utilisent des données (pour 83% des répondants).",
         "Pilotage des politiques publiques : La majorité des collectivités (74%) utilisent la donnée pour le pilotage de leurs politiques publiques, ce qui englobe potentiellement la gestion de leur patrimoine.",
@@ -67,7 +67,7 @@ export const UsageTreemap = () => {
     },
     { 
       domain: "Développement économique", 
-      percentage: 52,
+      percentage: 5,
       useCases: [
         "Génération de croissance et de productivité : 54% des Français estiment que l'IA aura un impact important sur la productivité et sera une source importante de croissance économique.",
         "Soutien à l'emploi : 26% des Français considèrent que l'usage des données est susceptible d'améliorer le développement économique et l'emploi.",
@@ -76,7 +76,7 @@ export const UsageTreemap = () => {
     },
     { 
       domain: "Eau", 
-      percentage: 50,
+      percentage: 9,
       useCases: [
         "Gestion de l'eau : 78% des Français estiment que l'IA aura un rôle essentiel ou important dans la gestion de l'eau dans les années à venir. La gestion de l'eau est un domaine où les attentes des Français et les pratiques des collectivités sont bien alignées.",
         "Déploiement de capteurs : Les réseaux de capteurs sont utilisés notamment dans le domaine de la gestion de l'eau, et leur déploiement a progressé à 27% des collectivités en 2025.",
@@ -85,7 +85,7 @@ export const UsageTreemap = () => {
     },
     { 
       domain: "Déchets", 
-      percentage: 46,
+      percentage: 11,
       useCases: [
         "Optimisation de la collecte et du tri : 40% des Français estiment que l'usage des données par les acteurs publics est susceptible d'améliorer la gestion de la collecte et du tri des déchets.",
         "Gestion du service public : Les collectivités locales utilisent les données pour la gestion générale des services publics.",
@@ -94,7 +94,7 @@ export const UsageTreemap = () => {
     },
     { 
       domain: "Tourisme", 
-      percentage: 45,
+      percentage: 2,
       useCases: [
         "Développement de nouveaux services : 20% des Français citent le développement de nouveaux services ou de nouvelles politiques publiques comme un avantage potentiel de l'utilisation de l'IA par le service public.",
         "Amélioration de l'information aux citoyens/usagers : L'amélioration de l'information et de la transparence vis-à-vis des citoyens est citée par 29% des Français comme un avantage de l'IA.",
@@ -103,7 +103,7 @@ export const UsageTreemap = () => {
     },
     { 
       domain: "Gestion de l'espace public", 
-      percentage: 44,
+      percentage: 9,
       useCases: [
         "Comptage des flux : La collecte de données comprend le comptage des fréquentations et des véhicules, souvent via des capteurs.",
         "Gestion du service public : Les collectivités locales utilisent les données pour la gestion du service public.",
@@ -112,7 +112,7 @@ export const UsageTreemap = () => {
     },
     { 
       domain: "Action sociale", 
-      percentage: 39,
+      percentage: 4,
       useCases: [
         "Politiques d'aide sociale : 58% des Français estiment que l'IA jouera un rôle essentiel ou important dans les politiques d'aide sociale dans les années à venir.",
         "Lutte contre les inégalités : 20% des Français estiment que l'usage des données est susceptible d'améliorer la lutte contre les inégalités sociales et les discriminations.",
@@ -121,7 +121,7 @@ export const UsageTreemap = () => {
     },
     { 
       domain: "Sécurité", 
-      percentage: 35,
+      percentage: 10,
       useCases: [
         "Vidéoprotection et détection de comportements suspects : 75% des Français sont d'accord avec le fait que le service public utilise l'IA pour analyser en direct les images de vidéoprotection afin de détecter et d'identifier les comportements suspects.",
         "Sécurité des biens et des personnes : 72% des Français estiment que l'IA jouera un rôle essentiel ou important dans la sécurité des biens et des personnes.",
@@ -129,12 +129,21 @@ export const UsageTreemap = () => {
       ]
     },
     { 
-      domain: "Citoyenneté", 
-      percentage: 32,
+      domain: "Relation aux usagers", 
+      percentage: 20,
       useCases: [
         "Amélioration de l'information et transparence : L'amélioration de l'information et de la transparence vis-à-vis des citoyens est citée par 29% des Français comme un avantage de l'IA. Cependant, l'amélioration de l'information et de la transparence est en recul dans les priorités des collectivités.",
         "Traitement des demandes des administrés : L'IA est utilisée pour traiter les demandes et fournir des réponses personnalisées aux administrés, s'inscrivant dans le domaine de la relation aux usagers.",
         "Mise en place d'une gouvernance citoyenne et contrôle : Les Français sont largement favorables à la mise en place de contrôles par un organisme indépendant (91% le jugent prioritaire/important pour les données) et 93% le jugent essentiel/important pour l'IA."
+      ]
+    },
+    { 
+      domain: "Autre", 
+      percentage: 12,
+      useCases: [
+        "Autres domaines d'usage : Certains projets d'IA dans les collectivités territoriales concernent d'autres domaines spécifiques non classés dans les catégories principales.",
+        "Expérimentations variées : Les collectivités explorent différents cas d'usage de l'IA dans des domaines émergents ou transversaux.",
+        "Innovation et adaptation : Les collectivités adaptent l'usage de l'IA à leurs besoins spécifiques et contextes locaux."
       ]
     }
   ];
