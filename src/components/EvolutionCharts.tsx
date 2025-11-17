@@ -1,6 +1,17 @@
 import { useState, useEffect, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import {
+  BarChart,
+  Bar,
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
 import { TrendingUp, TrendingDown } from "lucide-react";
 
 const evolutionData: Array<{
@@ -13,65 +24,47 @@ const evolutionData: Array<{
     metric: "Collectivités data (+3500 hab)",
     data: [
       { year: "2022", value: 40 },
-      { year: "2025", value: 74 }
+      { year: "2025", value: 74 },
     ],
     trend: "up",
-    description: "+34 points en 3 ans"
+    description: "+34 points en 3 ans",
   },
   {
     metric: "Collectivités data (-3500 hab)",
     data: [
       { year: "2022", value: 6 },
-      { year: "2025", value: 49 }
+      { year: "2025", value: 49 },
     ],
     trend: "up",
-    description: "+43 points en 3 ans"
+    description: "+43 points en 3 ans",
   },
   {
     metric: "Direction générale impliquée",
     data: [
       { year: "2022", value: 53 },
-      { year: "2025", value: 73 }
+      { year: "2025", value: 73 },
     ],
     trend: "up",
-    description: "+20 points en 3 ans"
+    description: "+20 points en 3 ans",
   },
   {
     metric: "IA générative utilisée",
     data: [
       { year: "2024", value: 52 },
-      { year: "2025", value: 84 }
+      { year: "2025", value: 84 },
     ],
     trend: "up",
-    description: "+32 points en 1 an"
-  },
-  {
-    metric: "Conventions partenariales",
-    data: [
-      { year: "2024", value: 42 },
-      { year: "2025", value: 60 }
-    ],
-    trend: "up",
-    description: "+18 points en 1 an"
-  },
-  {
-    metric: "Statut public des données",
-    data: [
-      { year: "2024", value: 53 },
-      { year: "2025", value: 74 }
-    ],
-    trend: "up",
-    description: "+21 points en 1 an"
+    description: "+32 points en 1 an",
   },
   {
     metric: "Transparence comme objectif",
     data: [
       { year: "2024", value: 59 },
-      { year: "2025", value: 43 }
+      { year: "2025", value: 43 },
     ],
     trend: "down",
-    description: "-16 points en 1 an"
-  }
+    description: "-16 points en 1 an",
+  },
 ];
 
 interface ChartCardProps {
@@ -84,7 +77,7 @@ interface ChartCardProps {
 
 const ChartCard = ({ metric, data, trend, description, index }: ChartCardProps) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [animatedData, setAnimatedData] = useState(data.map(d => ({ ...d, value: 0 })));
+  const [animatedData, setAnimatedData] = useState(data.map((d) => ({ ...d, value: 0 })));
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -96,7 +89,7 @@ const ChartCard = ({ metric, data, trend, description, index }: ChartCardProps) 
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     if (cardRef.current) {
@@ -133,10 +126,10 @@ const ChartCard = ({ metric, data, trend, description, index }: ChartCardProps) 
   };
 
   return (
-    <Card 
+    <Card
       ref={cardRef}
       className={`border-2 border-border hover:border-primary transition-all duration-500 bg-card ${
-        isVisible ? 'animate-fade-in' : 'opacity-0'
+        isVisible ? "animate-fade-in" : "opacity-0"
       }`}
       style={{ animationDelay: `${index * 100}ms` }}
     >
@@ -149,28 +142,22 @@ const ChartCard = ({ metric, data, trend, description, index }: ChartCardProps) 
             <TrendingDown className="h-6 w-6 text-red-500" />
           )}
         </CardTitle>
-        <p className={`text-sm font-semibold ${trend === "up" ? "text-green-600" : "text-red-600"}`}>
-          {description}
-        </p>
+        <p className={`text-sm font-semibold ${trend === "up" ? "text-green-600" : "text-red-600"}`}>{description}</p>
       </CardHeader>
       <CardContent>
         <ResponsiveContainer width="100%" height={200}>
           <BarChart data={animatedData}>
             <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
-            <XAxis 
-              dataKey="year" 
+            <XAxis dataKey="year" stroke="hsl(var(--foreground))" style={{ fontSize: "12px" }} />
+            <YAxis
               stroke="hsl(var(--foreground))"
-              style={{ fontSize: '12px' }}
-            />
-            <YAxis 
-              stroke="hsl(var(--foreground))"
-              style={{ fontSize: '12px' }}
+              style={{ fontSize: "12px" }}
               domain={[0, 100]}
               tickFormatter={(value) => `${value}%`}
             />
             <Tooltip content={<CustomTooltip />} />
-            <Bar 
-              dataKey="value" 
+            <Bar
+              dataKey="value"
               fill="hsl(var(--primary))"
               animationDuration={1000}
               animationBegin={0}
@@ -196,7 +183,7 @@ export const EvolutionCharts = () => {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     if (headerRef.current) {
@@ -213,15 +200,11 @@ export const EvolutionCharts = () => {
   return (
     <section className="py-20 bg-card">
       <div className="container mx-auto px-6">
-        <div 
+        <div
           ref={headerRef}
-          className={`text-center mb-16 transition-all duration-700 ${
-            headerVisible ? 'animate-fade-in' : 'opacity-0'
-          }`}
+          className={`text-center mb-16 transition-all duration-700 ${headerVisible ? "animate-fade-in" : "opacity-0"}`}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-accent mb-4">
-            Évolution 2022-2025
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-accent mb-4">Évolution 2022-2025</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Trajectoire de transformation numérique des collectivités territoriales
           </p>
@@ -240,24 +223,26 @@ export const EvolutionCharts = () => {
           ))}
         </div>
 
-        <div 
+        <div
           className={`mt-12 bg-primary/5 rounded-xl p-8 border-2 border-primary/20 transition-all duration-700 ${
-            headerVisible ? 'animate-fade-in' : 'opacity-0'
+            headerVisible ? "animate-fade-in" : "opacity-0"
           }`}
-          style={{ animationDelay: '800ms' }}
+          style={{ animationDelay: "800ms" }}
         >
-          <h3 className="text-2xl font-bold text-accent mb-4">
-            📈 Analyse des tendances
-          </h3>
+          <h3 className="text-2xl font-bold text-accent mb-4">📈 Analyse des tendances</h3>
           <div className="space-y-3 text-foreground">
             <p>
-              <strong className="text-primary">Accélération forte :</strong> L'adoption de l'IA générative (+32 points en 1 an) et des projets data dans les petites communes (+43 points en 3 ans) témoigne d'une démocratisation rapide.
+              <strong className="text-primary">Accélération forte :</strong> L'adoption de l'IA générative (+32 points
+              en 1 an) et des projets data dans les petites communes (+43 points en 3 ans) témoigne d'une
+              démocratisation rapide.
             </p>
             <p>
-              <strong className="text-primary">Structuration :</strong> L'implication des directions générales (+20 points) et le développement des conventions partenariales (+18 points) marquent une professionnalisation.
+              <strong className="text-primary">Structuration :</strong> L'implication des directions générales (+20
+              points) et le développement des conventions partenariales (+18 points) marquent une professionnalisation.
             </p>
             <p>
-              <strong className="text-red-600">Point de vigilance :</strong> Le recul de la transparence comme objectif (-16 points) souligne un défi majeur pour maintenir la confiance citoyenne.
+              <strong className="text-red-600">Point de vigilance :</strong> Le recul de la transparence comme objectif
+              (-16 points) souligne un défi majeur pour maintenir la confiance citoyenne.
             </p>
           </div>
         </div>
