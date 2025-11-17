@@ -8,11 +8,11 @@ export const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Observatoire Data Publica</h3>
             <p className="text-accent-foreground/80 leading-relaxed">
-              Baromètre annuel sur l'état des projets d'intelligence artificielle 
-              dans les collectivités territoriales françaises.
+              Baromètre annuel sur l'état des projets d'intelligence artificielle dans les collectivités territoriales
+              françaises.
             </p>
           </div>
-          
+
           <div>
             <h3 className="text-xl font-bold mb-4">Études 2025</h3>
             <ul className="space-y-2 text-accent-foreground/80">
@@ -22,23 +22,23 @@ export const Footer = () => {
               <li>• Utilisation de l'IA</li>
             </ul>
           </div>
-          
+
           <div>
             <h3 className="text-xl font-bold mb-4">En savoir plus</h3>
-            <a 
-              href="https://publi-ia.fr" 
-              target="_blank" 
+            <a
+              href="https://public-ia.fr"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
             >
-              Visiter publi-ia.fr
+              Visiter public-ia.fr
               <ExternalLink className="h-4 w-4" />
             </a>
           </div>
         </div>
-        
+
         <div className="border-t border-accent-foreground/20 pt-8 text-center text-accent-foreground/60">
-          <p>© 2025 Observatoire Data Publica - Tous droits réservés</p>
+          <p>© 2025 Public IA - Tous droits réservés</p>
         </div>
       </div>
     </footer>
