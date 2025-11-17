@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { KeyFindings } from "@/components/KeyFindings";
+import { EvolutionCharts } from "@/components/EvolutionCharts";
 import { StudySection } from "@/components/StudySection";
 import { UsageTreemap } from "@/components/UsageTreemap";
 import { CitizenPerception } from "@/components/CitizenPerception";
@@ -62,6 +63,10 @@ const Index = () => {
       </section>
       <section id="chiffres-cles">
         <KeyFindings />
+      </section>
+      
+      <section id="evolution">
+        <EvolutionCharts />
       </section>
       
       <section id="etat-des-lieux">
