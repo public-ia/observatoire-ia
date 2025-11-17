@@ -24,9 +24,9 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-xl font-bold mb-4">En savoir plus</h3>
+            <h3 className="text-xl font-bold mb-4">Contactez-nous</h3>
             <a
-              href="https://public-ia.fr"
+              href="https://www.public-ia.fr/contact/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
