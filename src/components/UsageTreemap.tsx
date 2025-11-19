@@ -247,6 +247,12 @@ export const UsageTreemap = () => {
           type: "Métropole",
           project: "Optimisation de l'entretien des espaces verts par analyse prédictive",
           results: "Réduction des coûts et amélioration de la qualité des espaces publics"
+        },
+        {
+          collectivite: "Ville de Belfort",
+          type: "Ville",
+          project: "Détection des trottoirs encombrés par IA pour signalement automatique",
+          results: "Amélioration de la propreté urbaine et intervention ciblée des services"
         }
       ]
     },
@@ -397,6 +403,12 @@ export const UsageTreemap = () => {
           type: "Région",
           project: "Analyse des flux touristiques par IA pour mieux répartir les visiteurs",
           results: "Désengorgement des sites populaires et valorisation d'autres lieux"
+        },
+        {
+          collectivite: "Office de Tourisme de Lannion",
+          type: "Office de Tourisme",
+          project: "Chatbot IA pour renseigner les visiteurs et promouvoir le territoire",
+          results: "Service d'information touristique accessible 24/7 et personnalisé"
         }
       ]
     }
