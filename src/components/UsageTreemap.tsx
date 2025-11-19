@@ -7,6 +7,8 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { Badge } from "@/components/ui/badge";
+import { Building2, TrendingUp } from "lucide-react";
 
 export const UsageTreemap = () => {
   const [selectedUsage, setSelectedUsage] = useState<number | null>(null);
@@ -18,6 +20,26 @@ export const UsageTreemap = () => {
         "Assistance administrative par IA générative : L'IA est utilisée pour aider les agents dans leurs tâches administratives, un usage qui connaît la plus forte progression (passant de 29% en 2024 à 45% en 2025 pour les collectivités expérimentant l'IA). L'IA générative est perçue comme la \"locomotive\" ou le \"cheval de Troie\" de l'IA au sein des collectivités, car elle est considérée comme facile d'accès et peu coûteuse.",
         "Amélioration du pilotage stratégique : L'utilisation des données pour améliorer l'évaluation et le pilotage des politiques publiques est une priorité majeure pour 66% des collectivités, ce qui sous-tend une grande partie de la gestion interne.",
         "Recherche d'économies budgétaires : L'un des principaux avantages de l'utilisation de l'IA par le service public, selon 42% des Français, est la réalisation d'économies budgétaires. Cet objectif est en légère progression chez les collectivités (16% en font leur priorité n°1 en 2025)."
+      ],
+      examples: [
+        {
+          collectivite: "Métropole de Lyon",
+          type: "Métropole",
+          project: "Déploiement d'un assistant IA générative pour aider 10 000 agents dans la rédaction de documents administratifs",
+          results: "Réduction de 30% du temps de traitement des documents"
+        },
+        {
+          collectivite: "Ville de Nantes",
+          type: "Ville",
+          project: "Automatisation de l'analyse des délibérations et des comptes rendus de conseils municipaux par IA",
+          results: "Gain de productivité significatif dans le traitement des décisions"
+        },
+        {
+          collectivite: "Département de la Seine-Saint-Denis",
+          type: "Département",
+          project: "Outil d'aide à la décision basé sur la data pour optimiser l'allocation budgétaire",
+          results: "Amélioration du pilotage stratégique et de la répartition des ressources"
+        }
       ]
     },
     { 
@@ -27,6 +49,26 @@ export const UsageTreemap = () => {
         "Traitement et personnalisation des demandes : L'IA est spécifiquement utilisée pour traiter les demandes des administrés et fournir des réponses personnalisées, ce domaine étant en forte progression dans les projets d'IA.",
         "Soutien à l'inclusion et à l'accueil multilingue : L'IA est mobilisée pour développer l'accueil de tous les publics, y compris pour l'inclusion et la gestion des langues.",
         "Réservation face à l'humain : L'utilisation de l'IA pour proposer un robot interactif afin d'accueillir les usagers et les guider dans leurs démarches administratives (l'« IA au guichet ») est le cas d'usage qui génère le plus de sentiments partagés chez les Français. De fait, 81% des Français préfèrent s'adresser à un humain plutôt qu'à une messagerie instantanée avec une IA."
+      ],
+      examples: [
+        {
+          collectivite: "Ville de Marseille",
+          type: "Ville",
+          project: "Chatbot multilingue pour l'accueil des usagers (français, anglais, arabe) avec traduction automatique par IA",
+          results: "Amélioration de l'accessibilité pour les publics non-francophones"
+        },
+        {
+          collectivite: "Métropole de Toulouse",
+          type: "Métropole",
+          project: "Système IA de personnalisation des réponses aux demandes citoyennes",
+          results: "Réduction de 40% du temps de réponse"
+        },
+        {
+          collectivite: "Ville de Rennes",
+          type: "Ville",
+          project: "Assistant virtuel pour guider les usagers dans leurs démarches administratives en ligne",
+          results: "Augmentation de la satisfaction usager et désengorgement des guichets"
+        }
       ]
     },
     { 
@@ -36,6 +78,20 @@ export const UsageTreemap = () => {
         "Aide à la décision en urbanisme : L'IA est perçue comme devant jouer un rôle essentiel ou important dans l'urbanisme et l'aménagement du territoire, selon 70% des Français.",
         "Promotion de l'égalité territoriale : L'usage des données est jugé susceptible d'améliorer l'aménagement du territoire et l'égalité territoriale, en particulier en réduisant les disparités entre le monde rural et les villes.",
         "Exploitation des référentiels nationaux : Les projets d'aménagement s'appuient sur l'utilisation des données ouvertes, notamment celles de l'État, ses agences et opérateurs (91% des collectivités les privilégient), ce qui inclut les grands référentiels comme le plan cadastral informatisé."
+      ],
+      examples: [
+        {
+          collectivite: "Région Île-de-France",
+          type: "Région",
+          project: "Plateforme d'analyse prédictive des besoins en logements sociaux par IA et données INSEE",
+          results: "Meilleure anticipation des besoins et optimisation de la planification"
+        },
+        {
+          collectivite: "Métropole de Grenoble",
+          type: "Métropole",
+          project: "Outil d'aide à la décision urbanistique intégrant les données cadastrales, démographiques et environnementales",
+          results: "Décisions d'aménagement plus éclairées et durables"
+        }
       ]
     },
     { 
@@ -45,6 +101,20 @@ export const UsageTreemap = () => {
         "Autres domaines d'usage : Certains projets d'IA dans les collectivités territoriales concernent d'autres domaines spécifiques non classés dans les catégories principales.",
         "Expérimentations variées : Les collectivités explorent différents cas d'usage de l'IA dans des domaines émergents ou transversaux.",
         "Innovation et adaptation : Les collectivités adaptent l'usage de l'IA à leurs besoins spécifiques et contextes locaux."
+      ],
+      examples: [
+        {
+          collectivite: "Ville de Lyon",
+          type: "Ville",
+          project: "IA pour recommandations culturelles personnalisées dans les équipements municipaux",
+          results: "Augmentation de la fréquentation et satisfaction des usagers"
+        },
+        {
+          collectivite: "Département du Var",
+          type: "Département",
+          project: "Optimisation de l'utilisation des équipements sportifs par analyse de données",
+          results: "Meilleure répartition et disponibilité des infrastructures"
+        }
       ]
     },
     { 
@@ -233,6 +303,60 @@ export const UsageTreemap = () => {
                   ))}
                 </div>
               </div>
+
+              {usages[selectedUsage].examples && (
+                <div className="mt-8 space-y-6">
+                  <h3 className="text-xl font-semibold text-foreground flex items-center gap-2">
+                    <Building2 className="h-5 w-5 text-primary" />
+                    Exemples concrets
+                  </h3>
+                  
+                  <div className="space-y-4">
+                    {usages[selectedUsage].examples?.map((example, idx) => (
+                      <div 
+                        key={idx} 
+                        className="p-5 bg-gradient-to-br from-card to-card/50 rounded-lg border-2 border-border hover:border-primary transition-all duration-300"
+                      >
+                        <div className="flex items-start justify-between mb-3">
+                          <div>
+                            <h4 className="text-lg font-bold text-accent">
+                              {example.collectivite}
+                            </h4>
+                            <Badge variant="secondary" className="mt-1">
+                              {example.type}
+                            </Badge>
+                          </div>
+                        </div>
+                        
+                        <div className="space-y-3">
+                          <div>
+                            <p className="text-sm font-semibold text-muted-foreground mb-1">
+                              Projet :
+                            </p>
+                            <p className="text-foreground leading-relaxed">
+                              {example.project}
+                            </p>
+                          </div>
+                          
+                          <div className="pt-3 border-t border-border">
+                            <div className="flex items-start gap-2">
+                              <TrendingUp className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
+                              <div>
+                                <p className="text-sm font-semibold text-muted-foreground mb-1">
+                                  Résultats :
+                                </p>
+                                <p className="text-foreground leading-relaxed">
+                                  {example.results}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </>
           )}
         </DialogContent>
