@@ -48,26 +48,26 @@ export const Navigation = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-[#043145] border-b border-[#9dadb5]/20 shadow-md">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+    <nav className="sticky top-0 z-50 bg-accent/95 backdrop-blur-md shadow-elegant border-b border-accent-foreground/10">
+      <div className="container mx-auto px-6">
+        <div className="flex items-center justify-between h-20">
           {/* Logo/Title */}
           <div className="flex-shrink-0">
-            <h1 className="text-lg font-bold text-white">
+            <h1 className="text-2xl font-bold text-accent-foreground tracking-tight">
               Baromètre IA 2025
             </h1>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden md:flex items-center space-x-2">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 ${
                   activeSection === item.id
-                    ? "bg-[#f68428] text-white"
-                    : "text-white hover:bg-[#f68428]/80 hover:text-white"
+                    ? "bg-primary text-primary-foreground shadow-glow"
+                    : "text-accent-foreground hover:bg-accent-foreground/10 hover:scale-105"
                 }`}
               >
                 {item.label}
@@ -81,7 +81,7 @@ export const Navigation = () => {
               variant="ghost"
               size="icon"
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white hover:bg-[#f68428]/80"
+              className="text-accent-foreground hover:bg-accent-foreground/10"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </Button>
@@ -96,10 +96,10 @@ export const Navigation = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`px-3 py-2 rounded-md text-sm font-medium text-left transition-colors ${
+                  className={`px-5 py-3 rounded-lg text-sm font-semibold text-left transition-all duration-300 ${
                     activeSection === item.id
-                      ? "bg-[#f68428] text-white"
-                      : "text-white hover:bg-[#f68428]/80 hover:text-white"
+                      ? "bg-primary text-primary-foreground shadow-glow"
+                      : "text-accent-foreground hover:bg-accent-foreground/10"
                   }`}
                 >
                   {item.label}
