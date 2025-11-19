@@ -3,18 +3,18 @@ import { TrendingUp, Users, Building2, Sparkles, ShieldCheck, Database } from "l
 
 export const KeyFindings = () => {
   return (
-    <section id="key-findings" className="py-20 bg-background">
+    <section id="key-findings" className="py-24 bg-background">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-accent mb-4">
+        <div className="text-center mb-16 animate-fade-in-up">
+          <h2 className="text-5xl md:text-6xl font-bold text-accent mb-6 tracking-tight">
             Chiffres Clés
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto font-light">
             Les données marquantes du baromètre 2025 sur l'IA dans les collectivités territoriales
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           <StatCard
             value="77%"
             label="Projets IA engagés"
@@ -53,11 +53,12 @@ export const KeyFindings = () => {
           />
         </div>
 
-        <div className="bg-primary/5 rounded-xl p-8 border-2 border-primary/20">
-          <h3 className="text-2xl font-bold text-accent mb-4">
-            📊 Baromètre 2025
+        <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-10 border-2 border-primary/20 shadow-elegant hover:shadow-elegant-lg transition-all duration-500">
+          <h3 className="text-3xl font-bold text-accent mb-6 flex items-center gap-3">
+            <span className="text-4xl">📊</span>
+            Baromètre 2025
           </h3>
-          <p className="text-foreground">
+          <p className="text-foreground leading-relaxed text-lg">
             Ces données proviennent du Baromètre 2025 de l'Observatoire Data Publica et de l'enquête Ipsos-BVA sur la perception des Français face à la gestion des données et l'utilisation de l'IA par le service public.
           </p>
         </div>
