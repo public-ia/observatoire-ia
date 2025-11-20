@@ -8,8 +8,9 @@ export const Footer = () => {
           <div>
             <h3 className="text-2xl font-bold mb-6 tracking-tight">Observatoire Data Publica</h3>
             <p className="text-accent-foreground/90 leading-relaxed mb-6 text-lg">
-              Baromètre annuel sur l'état des projets d'intelligence artificielle dans les collectivités territoriales
-              françaises.
+              Source des données et de l'analyse : Cahier de l’Observatoire Data Publica, coordonné par Jacques Priol et
+              CIVITEO. Ce site est une adaptation technique réalisée par Public IA à des fins pédagogiques, sous licence
+              CC-BY-NC 4.0.
             </p>
             <a
               href="/Observatoire-Data-Publica-Barometre-2025.pdf"
@@ -28,6 +29,15 @@ export const Footer = () => {
                 <span className="text-primary font-bold">•</span> Source des données et de l'analyse : Cahier de
                 l’Observatoire Data Publica, coordonné par Jacques Priol et CIVITEO. Ce site est une adaptation
                 technique réalisée par Public IA à des fins pédagogiques, sous licence CC-BY-NC 4.0.
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="text-primary font-bold">•</span> Perception des Français
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="text-primary font-bold">•</span> Gestion des données publiques
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="text-primary font-bold">•</span> Utilisation de l'IA
               </li>
             </ul>
           </div>
