@@ -12,7 +12,7 @@ export const Footer = () => {
               technique réalisée par Public IA à des fins pédagogiques, sous licence CC-BY-NC 4.0.
             </p>
             <a
-              href="/Observatoire-Data-Publica-Barometre-2025.pdf"
+              href="https://observatoire.data-publica.eu/wp-content/uploads/2025/11/Cahier-OBS-DATA-PUBLICA-04-vdef.pdf"
               download
               className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-glow hover:shadow-glow-lg hover:scale-105"
             >
