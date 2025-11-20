@@ -53,15 +53,6 @@ export const KeyFindings = () => {
           />
         </div>
 
-        <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-10 border-2 border-primary/20 shadow-elegant hover:shadow-elegant-lg transition-all duration-500">
-          <h3 className="text-3xl font-bold text-accent mb-6 flex items-center gap-3">
-            <span className="text-4xl">📊</span>
-            Baromètre 2025
-          </h3>
-          <p className="text-foreground leading-relaxed text-lg">
-            Ces données proviennent du Baromètre 2025 de l'Observatoire Data Publica et de l'enquête Ipsos-BVA sur la perception des Français face à la gestion des données et l'utilisation de l'IA par le service public.
-          </p>
-        </div>
       </div>
     </section>
   );
