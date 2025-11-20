@@ -25,16 +25,9 @@ export const Footer = () => {
             <h3 className="text-2xl font-bold mb-6 tracking-tight">Études 2025</h3>
             <ul className="space-y-3 text-accent-foreground/90 text-lg">
               <li className="flex items-center gap-2">
-                <span className="text-primary font-bold">•</span> Baromètre des collectivités
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-primary font-bold">•</span> Perception des Français
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-primary font-bold">•</span> Gestion des données publiques
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-primary font-bold">•</span> Utilisation de l'IA
+                <span className="text-primary font-bold">•</span> Source des données et de l'analyse : Cahier de
+                l’Observatoire Data Publica, coordonné par Jacques Priol et CIVITEO. Ce site est une adaptation
+                technique réalisée par Public IA à des fins pédagogiques, sous licence CC-BY-NC 4.0.
               </li>
             </ul>
           </div>
