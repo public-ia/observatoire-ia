@@ -1,12 +1,35 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Users, CalendarDays, ClipboardList, Ruler } from "lucide-react";
+import { Building2, Users } from "lucide-react";
 import { edition } from "@/data";
 
-const blocs = [
-  { icone: Users, titre: "Échantillon", texte: edition.echantillon },
-  { icone: CalendarDays, titre: "Terrain", texte: `${edition.terrain}. ${edition.mode}.` },
-  { icone: ClipboardList, titre: "Méthode", texte: `${edition.quotas}. ${edition.ponderation}.` },
-  { icone: Ruler, titre: "Marge d'erreur", texte: edition.marge },
+const { barometre, ipsos } = edition;
+
+const etudes = [
+  {
+    icone: Building2,
+    role: "Source principale",
+    nom: `${barometre.nom} (${barometre.numero})`,
+    titre: barometre.titre,
+    lignes: [
+      ["Échantillon", barometre.echantillon],
+      ["Terrain", barometre.terrain],
+      ["Composition", barometre.composition],
+      ["Lecture", barometre.lecture],
+      ["Réalisation", barometre.pilotage],
+    ],
+  },
+  {
+    icone: Users,
+    role: "Regard des Français",
+    nom: ipsos.nom,
+    titre: ipsos.titre,
+    lignes: [
+      ["Échantillon", ipsos.echantillon],
+      ["Terrain", ipsos.terrain],
+      ["Méthode", ipsos.methode],
+      ["Marge d'erreur", ipsos.marge],
+    ],
+  },
 ];
 
 export const Methodology = () => (
@@ -16,28 +39,36 @@ export const Methodology = () => (
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-accent mb-5 tracking-tight">Méthodologie</h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto">
-            « {edition.titreEtude} », enquête {edition.institut} pour l'{edition.commanditaire}, {edition.date.toLowerCase()}.
+            Deux enquêtes de l'Observatoire Data Publica, menées en 2026 : l'une auprès des collectivités, l'autre
+            auprès des Français
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {blocs.map(({ icone: Icone, titre, texte }) => (
-            <Card key={titre} className="border-2 border-border bg-card">
-              <CardContent className="p-6 flex gap-5">
-                <div className="p-3 bg-primary/10 rounded-xl h-fit">
-                  <Icone className="h-6 w-6 text-primary" />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {etudes.map(({ icone: Icone, role, nom, titre, lignes }) => (
+            <Card key={nom} className="border-2 border-border bg-card">
+              <CardContent className="p-6 md:p-8">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="p-3 bg-primary/10 rounded-xl h-fit">
+                    <Icone className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold uppercase tracking-widest text-primary">{role}</p>
+                    <h3 className="text-xl font-bold text-accent">{nom}</h3>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-accent mb-2">{titre}</h3>
-                  <p className="text-foreground leading-relaxed">{texte}</p>
-                </div>
+                <p className="text-foreground italic mb-5">« {titre} »</p>
+                <dl className="space-y-3">
+                  {lignes.map(([terme, texte]) => (
+                    <div key={terme}>
+                      <dt className="font-bold text-accent">{terme}</dt>
+                      <dd className="text-foreground leading-relaxed">{texte}</dd>
+                    </div>
+                  ))}
+                </dl>
               </CardContent>
             </Card>
           ))}
         </div>
-        <p className="mt-8 text-center text-muted-foreground">
-          Les écarts d'un ou deux points d'une année sur l'autre sont dans la marge d'erreur : ce sont les tendances
-          sur plusieurs éditions qui sont significatives. {edition.editionsPrecedentes}
-        </p>
       </div>
     </div>
   </div>

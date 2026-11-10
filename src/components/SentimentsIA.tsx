@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { edition, sentimentsIA } from "@/data";
-import { DeltaBadge } from "./QuestionBlock";
+import { sentimentsIA } from "@/data";
+import { DeltaBadge, referenceSource } from "./Blocs";
 
 const COULEURS = {
   positif: "bg-accent",
@@ -59,8 +59,7 @@ export const SentimentsIA = () => {
           </div>
         </div>
         <p className="mt-6 pt-4 border-t border-border/60 text-xs text-muted-foreground">
-          Une seule réponse possible. Base : ensemble des répondants. Source : {edition.institut} pour l'
-          {edition.commanditaire}, {edition.date.toLowerCase()}, p. {page}.
+          Une seule réponse possible. Base : ensemble des répondants. Source : {referenceSource("ipsos", page)}.
         </p>
       </CardContent>
     </Card>

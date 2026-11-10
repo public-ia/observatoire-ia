@@ -6,9 +6,10 @@ const navItems = [
   { id: "accueil", label: "Accueil" },
   { id: "chiffres-cles", label: "Chiffres clés" },
   { id: "quiz", label: "Quiz" },
-  { id: "donnees", label: "Données" },
-  { id: "ia", label: "IA" },
+  { id: "data", label: "Data" },
   { id: "souverainete", label: "Souveraineté" },
+  { id: "ia", label: "IA" },
+  { id: "citoyens", label: "Citoyens" },
   { id: "recommandations", label: "Recommandations" },
   { id: "methodologie", label: "Méthodologie" },
 ];
@@ -51,14 +52,14 @@ export const Navigation = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1">
+          <div className="hidden xl:flex items-center space-x-1">
             {navItems.map(item => <button key={item.id} onClick={() => scrollToSection(item.id)} className={`px-3 xl:px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors duration-300 ${activeSection === item.id ? "bg-primary text-accent" : "text-accent-foreground hover:bg-accent-foreground/10"}`}>
                 {item.label}
               </button>)}
           </div>
 
           {/* Mobile menu button */}
-          <div className="lg:hidden">
+          <div className="xl:hidden">
             <Button variant="ghost" size="icon" aria-label="Menu" onClick={() => setIsOpen(!isOpen)} className="text-accent-foreground hover:bg-accent-foreground/10">
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </Button>
@@ -66,7 +67,7 @@ export const Navigation = () => {
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && <div className="lg:hidden pb-4">
+        {isOpen && <div className="xl:hidden pb-4">
             <div className="flex flex-col space-y-2">
               {navItems.map(item => <button key={item.id} onClick={() => scrollToSection(item.id)} className={`px-5 py-3 rounded-lg text-sm font-semibold text-left transition-colors duration-300 ${activeSection === item.id ? "bg-primary text-accent" : "text-accent-foreground hover:bg-accent-foreground/10"}`}>
                   {item.label}

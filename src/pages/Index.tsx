@@ -2,12 +2,13 @@ import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { KeyFindings } from "@/components/KeyFindings";
 import { ThemeSection } from "@/components/ThemeSection";
-import { SentimentsIA } from "@/components/SentimentsIA";
+import { BlocList } from "@/components/Blocs";
+import { CitizenTabs } from "@/components/CitizenTabs";
 import { Quiz } from "@/components/Quiz";
 import { Recommendations } from "@/components/Recommendations";
 import { Methodology } from "@/components/Methodology";
 import { Footer } from "@/components/Footer";
-import { donnees, ia, souverainete, pistesDiscussion } from "@/data";
+import { dataTerritoriale, iaTerritoriale, souverainete, pistesDiscussion } from "@/data";
 
 const Index = () => (
   <div className="min-h-screen">
@@ -21,37 +22,49 @@ const Index = () => (
     <section id="quiz">
       <Quiz />
     </section>
-    <section id="donnees">
+    <section id="data">
       <ThemeSection
-        numero="1"
-        titre="Les données personnelles"
-        sousTitre="Un sentiment de mauvaise information et une confiance qui se concentre sur les acteurs de proximité"
-        questions={donnees}
-        pistes={pistesDiscussion.donnees}
+        surTitre="Baromètre — Partie 1"
+        titre="La data territoriale"
+        sousTitre="7 collectivités sur 10 engagées dans des projets data : un niveau élevé, stable pour la première fois"
+        pistes={pistesDiscussion.data}
         fond="bg-card"
-      />
-    </section>
-    <section id="ia">
-      <ThemeSection
-        numero="2"
-        titre="L'intelligence artificielle"
-        sousTitre="Une perception qui continue de se détériorer, et une demande forte de contrôle et de transparence"
-        questions={ia}
-        pistes={pistesDiscussion.ia}
-        fond="bg-background"
       >
-        <SentimentsIA />
+        <BlocList blocs={dataTerritoriale} />
       </ThemeSection>
     </section>
     <section id="souverainete">
       <ThemeSection
-        numero="3"
-        titre="La souveraineté numérique"
-        sousTitre="Nouveau en 2026 : un concept peu connu, mais dont les éléments de mise en place suscitent l'adhésion"
-        questions={souverainete}
+        surTitre="Baromètre — Partie 2"
+        titre="La souveraineté"
+        sousTitre="Un enjeu national, mais pas encore local"
         pistes={pistesDiscussion.souverainete}
+        fond="bg-background"
+      >
+        <BlocList blocs={souverainete} />
+      </ThemeSection>
+    </section>
+    <section id="ia">
+      <ThemeSection
+        surTitre="Baromètre — Partie 3"
+        titre="L'IA territoriale"
+        sousTitre="Après l'engouement, la maîtrise ? Méthode, encadrement des usages et mesure des impacts"
+        pistes={pistesDiscussion.ia}
         fond="bg-card"
-      />
+      >
+        <BlocList blocs={iaTerritoriale} />
+      </ThemeSection>
+    </section>
+    <section id="citoyens">
+      <ThemeSection
+        surTitre="Enquête Ipsos bva"
+        titre="Qu'en pensent les Français ?"
+        sousTitre="Une perception de l'IA qui continue de se détériorer, et une demande forte de contrôle et de transparence"
+        pistes={pistesDiscussion.citoyens}
+        fond="bg-background"
+      >
+        <CitizenTabs />
+      </ThemeSection>
     </section>
     <section id="recommandations">
       <Recommendations />

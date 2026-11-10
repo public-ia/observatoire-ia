@@ -1,15 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Megaphone, ScrollText, Users, Flag, GraduationCap, Leaf, Shield, type LucideIcon } from "lucide-react";
-import { recommandations, type Recommandation } from "@/data";
-
-const ICONES: Record<Recommandation["icone"], LucideIcon> = {
-  transparence: Megaphone,
-  charte: ScrollText,
-  humain: Users,
-  souverainete: Flag,
-  formation: GraduationCap,
-  sobriete: Leaf,
-};
+import { Shield } from "lucide-react";
+import { recommandations } from "@/data";
+import { ICONES } from "./icones";
 
 export const Recommendations = () => (
   <div className="py-20 bg-card">
@@ -18,7 +10,7 @@ export const Recommendations = () => (
         <div className="text-center mb-14">
           <h2 className="text-4xl md:text-6xl font-bold text-accent mb-5 tracking-tight">Recommandations</h2>
           <p className="text-xl md:text-2xl text-muted-foreground font-light">
-            Six leviers pour une IA publique de confiance — lecture proposée par Public IA à partir des résultats
+            Six leviers pour une IA territoriale maîtrisée — lecture proposée par Public IA à partir des deux enquêtes
           </p>
         </div>
 
@@ -50,9 +42,9 @@ export const Recommendations = () => (
           </h3>
           <p className="text-foreground text-lg leading-relaxed">
             <strong className="text-accent">64 %</strong> des Français font confiance à leur commune ou intercommunalité
-            pour la gestion des données, contre 44 % pour l'État et 11 % pour les réseaux sociaux. Ce capital s'érode
-            toutefois (69 % en 2022) : il se préserve par la transparence, le contrôle humain et des choix
-            technologiques assumés.
+            pour la gestion des données, contre 44 % pour l'État. Mais ce capital s'érode (69 % en 2022) et seules
+            35 % des collectivités déclarent un portage politique de l'IA. Le nouveau mandat municipal est le moment
+            d'en faire un sujet d'élus autant que de services.
           </p>
         </div>
       </div>

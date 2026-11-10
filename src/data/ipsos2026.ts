@@ -1,72 +1,10 @@
 /**
- * Données de l'édition 2026.
- *
- * Source unique : enquête Ipsos bva pour l'Observatoire Data Publica,
+ * Enquête Ipsos bva pour l'Observatoire Data Publica (juillet 2026) :
  * « La perception des Français de la gestion des données et de l'utilisation
- * de l'IA par les acteurs publics », juillet 2026.
- *
- * Tous les chiffres du site viennent de ce fichier. Pour une nouvelle édition :
- * dupliquer ce fichier, mettre à jour les valeurs, décaler les rappels,
- * puis changer l'import dans `src/data/index.ts`.
- * Le champ `page` renvoie à la page du rapport, pour vérification.
+ * de l'IA par les acteurs publics ». Elle complète le baromètre des collectivités.
+ * Le champ `page` renvoie à la page du rapport Ipsos.
  */
-
-export type Annee = "2025" | "2024" | "2022";
-export type Rappels = Partial<Record<Annee, number>>;
-
-export type Palette = "accord4" | "niveau3" | "impact3" | "binaire";
-
-export interface Item {
-  label: string;
-  /** Détail des réponses, dans l'ordre de `echelle`. */
-  values: number[];
-  /** Indicateur de synthèse (ex. % confiance). */
-  total: number;
-  /** Même indicateur lors des éditions précédentes. */
-  rappels?: Rappels;
-  /** Item absent des éditions précédentes. */
-  nouveau?: boolean;
-  /** Affirmation exprimant une crainte (mise en évidence). */
-  crainte?: boolean;
-}
-
-export interface Question {
-  id: string;
-  page: number;
-  /** Enseignement principal, tel que titré dans le rapport. */
-  titre: string;
-  /** Libellé exact de la question posée. */
-  question: string;
-  base?: string;
-  echelle: string[];
-  palette: Palette;
-  totalLabel: string;
-  items: Item[];
-  /** Remarque de lecture. */
-  note?: string;
-}
-
-export const edition = {
-  annee: 2026,
-  precedente: "2025" as Annee,
-  titreEtude:
-    "La perception des Français de la gestion des données et de l'utilisation de l'IA par les acteurs publics",
-  institut: "Ipsos bva",
-  commanditaire: "Observatoire Data Publica",
-  date: "Juillet 2026",
-  terrain: "Du 16 au 22 juillet 2026",
-  echantillon:
-    "1 000 personnes, échantillon national représentatif de la population française âgée de 18 ans et plus",
-  mode: "Interrogation par Internet via l'Access Panel Online d'Ipsos",
-  quotas:
-    "Méthode des quotas : sexe, âge, profession de la personne de référence du foyer, catégorie d'agglomération, département",
-  ponderation:
-    "Échantillon pondéré par calage sur marges (sexe, âge, profession, région et catégorie d'agglomération)",
-  marge:
-    "Intervalle de confiance à 95 % : pour un résultat de 50 %, la valeur réelle se situe entre 46,9 % et 53,1 % ; pour 80 %, entre 77,5 % et 82,5 %.",
-  editionsPrecedentes: "Rappels disponibles pour 2025, 2024 et 2022 (pas d'édition 2023).",
-  lienObservatoire: "https://observatoire.data-publica.eu/",
-};
+import type { Question, Rappels } from "./types";
 
 const CONFIANCE = ["Tout à fait confiance", "Plutôt confiance", "Plutôt pas confiance", "Pas confiance du tout"];
 const ACCORD = ["Tout à fait d'accord", "Plutôt d'accord", "Plutôt pas d'accord", "Pas du tout d'accord"];
@@ -77,9 +15,10 @@ const NOTORIETE = ["Oui, et voit bien de quoi il s'agit", "Oui, mais ne voit pas
 /* 1. Les données personnelles                                         */
 /* ------------------------------------------------------------------ */
 
-export const donnees: Question[] = [
+export const citoyensDonnees: Question[] = [
   {
     id: "information",
+    source: "ipsos",
     page: 9,
     titre: "Les Français se sentent globalement mal informés sur l'utilisation de leurs données",
     question: "D'une manière générale, diriez-vous que vous vous sentez bien informé ou mal informé…",
@@ -103,6 +42,7 @@ export const donnees: Question[] = [
   },
   {
     id: "confiance-acteurs",
+    source: "ipsos",
     page: 10,
     titre: "Les acteurs de la santé suscitent le plus de confiance ; la défiance envers les acteurs privés demeure très élevée",
     question:
@@ -132,6 +72,7 @@ export const donnees: Question[] = [
   },
   {
     id: "usage-croissant",
+    source: "ipsos",
     page: 12,
     titre: "L'usage croissant des données demeure largement perçu comme une mauvaise chose pour l'évolution de la société",
     question:
@@ -150,6 +91,7 @@ export const donnees: Question[] = [
   },
   {
     id: "domaines-donnees",
+    source: "ipsos",
     page: 13,
     titre: "La santé est le domaine où l'amélioration grâce à l'usage des données est la plus perçue",
     question:
@@ -175,6 +117,7 @@ export const donnees: Question[] = [
   },
   {
     id: "villes-intelligentes",
+    source: "ipsos",
     page: 14,
     titre: "L'utilisation des données par les communes et intercommunalités reste perçue comme utile, malgré un recul",
     question:
@@ -190,6 +133,7 @@ export const donnees: Question[] = [
   },
   {
     id: "leviers-donnees",
+    source: "ipsos",
     page: 15,
     titre: "L'hébergement des données en France ou en Europe est l'élément le plus prioritaire pour améliorer la confiance",
     question:
@@ -209,6 +153,7 @@ export const donnees: Question[] = [
   },
   {
     id: "rgpd-notoriete",
+    source: "ipsos",
     page: 16,
     titre: "La notoriété du RGPD demeure importante, mais moins de 4 Français sur 10 voient bien de quoi il s'agit",
     question: "Avez-vous entendu parler du règlement européen RGPD (Règlement européen sur la protection des données personnelles) ?",
@@ -220,6 +165,7 @@ export const donnees: Question[] = [
   },
   {
     id: "rgpd-confiance",
+    source: "ipsos",
     page: 17,
     titre: "La confiance dans le RGPD demeure majoritaire mais est de nouveau en baisse",
     question: "Diriez-vous que vous avez confiance ou non dans le RGPD pour garantir la protection de vos données personnelles ?",
@@ -231,6 +177,7 @@ export const donnees: Question[] = [
   },
   {
     id: "rgpd-application",
+    source: "ipsos",
     page: 18,
     titre: "Au-delà du RGPD, c'est la confiance dans le respect de la réglementation par les acteurs qui est en baisse",
     question: "Et plus précisément, avez-vous confiance dans les acteurs suivants pour la bonne application de cette réglementation ?",
@@ -265,9 +212,10 @@ export const sentimentsIA = {
   negatifs: { value: 55, rappels: { "2025": 51, "2024": 51, "2022": 36 } as Rappels },
 };
 
-export const ia: Question[] = [
+export const citoyensIA: Question[] = [
   {
     id: "affirmations-ia",
+    source: "ipsos",
     page: 21,
     titre: "Les inquiétudes à l'égard de l'IA demeurent très fortes, même si une majorité de Français y voit aussi des avantages",
     question:
@@ -288,6 +236,7 @@ export const ia: Question[] = [
   },
   {
     id: "domaines-ia",
+    source: "ipsos",
     page: 22,
     titre: "L'IA est perçue comme allant jouer un rôle important au cours des prochaines années",
     question:
@@ -308,6 +257,7 @@ export const ia: Question[] = [
   },
   {
     id: "controle-ia",
+    source: "ipsos",
     page: 23,
     titre: "La préférence pour un contrôle des outils d'IA est largement majoritaire et chaque année plus importante",
     question:
@@ -322,6 +272,7 @@ export const ia: Question[] = [
   },
   {
     id: "humain-ou-ia",
+    source: "ipsos",
     page: 24,
     titre: "Les Français privilégient le contact humain à l'utilisation d'une messagerie instantanée",
     question:
@@ -336,6 +287,7 @@ export const ia: Question[] = [
   },
   {
     id: "leviers-ia",
+    source: "ipsos",
     page: 25,
     titre: "Informer les citoyens et adopter une charte : les deux premiers leviers de confiance dans l'IA publique",
     question:
@@ -354,6 +306,7 @@ export const ia: Question[] = [
   },
   {
     id: "environnement",
+    source: "ipsos",
     page: 26,
     titre: "Les Français souhaitent une limitation du recours à l'IA pour le service public et les géants du numérique",
     question:
@@ -373,9 +326,10 @@ export const ia: Question[] = [
 /* 3. La souveraineté numérique (nouveau en 2026)                      */
 /* ------------------------------------------------------------------ */
 
-export const souverainete: Question[] = [
+export const citoyensSouverainete: Question[] = [
   {
     id: "souverainete-notoriete",
+    source: "ipsos",
     page: 28,
     titre: "Une majorité de Français a entendu parler de la souveraineté numérique, mais moins d'un sur trois voit de quoi il s'agit",
     question: "Avez-vous entendu parler des enjeux de « souveraineté numérique » ?",
@@ -386,6 +340,7 @@ export const souverainete: Question[] = [
   },
   {
     id: "souverainete-leviers",
+    source: "ipsos",
     page: 29,
     titre: "Logiciels et systèmes d'IA français ou européens : les éléments jugés les plus importants",
     question:
@@ -401,102 +356,4 @@ export const souverainete: Question[] = [
       { label: "Autoriser les entreprises françaises ou européennes d'IA à s'entraîner sur des données du service public afin d'améliorer leur IA", values: [27, 43, 30], total: 70, nouveau: true },
     ],
   },
-];
-
-/* ------------------------------------------------------------------ */
-/* Synthèses                                                           */
-/* ------------------------------------------------------------------ */
-
-export interface ChiffreCle {
-  value: number;
-  label: string;
-  description: string;
-  icone: "sentiment" | "controle" | "information" | "charte" | "confiance" | "souverainete";
-  rappels?: Rappels;
-  nouveau?: boolean;
-  page: number;
-}
-
-export const chiffresCles: ChiffreCle[] = [
-  { value: 55, label: "Sentiments négatifs envers l'IA", description: "des Français ressentent de l'inquiétude ou du rejet quand ils entendent parler d'IA", icone: "sentiment", rappels: { "2025": 51, "2024": 51, "2022": 36 }, page: 20 },
-  { value: 87, label: "Contrôle strict", description: "veulent que le service public garde le contrôle le plus strict sur l'IA, même au prix de l'efficacité", icone: "controle", rappels: { "2025": 86, "2024": 84 }, page: 23 },
-  { value: 93, label: "Être informé de l'usage de l'IA", description: "jugent prioritaire ou important d'être informés à chaque fois qu'une IA est utilisée", icone: "information", nouveau: true, page: 25 },
-  { value: 92, label: "Une charte IA", description: "jugent prioritaire ou importante une charte encadrant les usages autorisés ou interdits", icone: "charte", nouveau: true, page: 25 },
-  { value: 64, label: "Confiance locale", description: "font confiance à leur commune ou intercommunalité pour la gestion des données, contre 44 % pour l'État", icone: "confiance", rappels: { "2025": 64, "2024": 66, "2022": 69 }, page: 10 },
-  { value: 91, label: "Logiciels souverains", description: "jugent prioritaire ou important le choix de logiciels français ou européens pour le service public", icone: "souverainete", nouveau: true, page: 29 },
-];
-
-export interface Tendance {
-  label: string;
-  /** Une hausse est-elle une bonne nouvelle pour l'action publique ? */
-  hausseFavorable: boolean;
-  points: Array<{ annee: string; value: number }>;
-  page: number;
-}
-
-export const tendances: Tendance[] = [
-  { label: "Sentiments négatifs envers l'IA", hausseFavorable: false, page: 20, points: [{ annee: "2022", value: 36 }, { annee: "2024", value: 51 }, { annee: "2025", value: 51 }, { annee: "2026", value: 55 }] },
-  { label: "Confiance dans l'IA", hausseFavorable: true, page: 21, points: [{ annee: "2022", value: 45 }, { annee: "2024", value: 35 }, { annee: "2025", value: 32 }, { annee: "2026", value: 34 }] },
-  { label: "Crainte d'une dépendance à l'IA", hausseFavorable: false, page: 21, points: [{ annee: "2022", value: 79 }, { annee: "2024", value: 81 }, { annee: "2025", value: 85 }, { annee: "2026", value: 88 }] },
-  { label: "Bien informés sur l'usage de leurs données par les acteurs publics", hausseFavorable: true, page: 9, points: [{ annee: "2022", value: 41 }, { annee: "2024", value: 37 }, { annee: "2025", value: 31 }, { annee: "2026", value: 33 }] },
-  { label: "Confiance dans l'État pour la gestion des données", hausseFavorable: true, page: 10, points: [{ annee: "2022", value: 53 }, { annee: "2024", value: 49 }, { annee: "2025", value: 45 }, { annee: "2026", value: 44 }] },
-  { label: "Confiance dans la commune ou l'intercommunalité", hausseFavorable: true, page: 10, points: [{ annee: "2022", value: 69 }, { annee: "2024", value: 66 }, { annee: "2025", value: 64 }, { annee: "2026", value: 64 }] },
-];
-
-/* ------------------------------------------------------------------ */
-/* Outils d'animation (contenus Public IA, hors étude)                 */
-/* ------------------------------------------------------------------ */
-
-export interface QuizItem {
-  question: string;
-  reponse: number;
-  explication: string;
-  page: number;
-}
-
-export const quiz: QuizItem[] = [
-  { question: "Quelle part des Français ressent principalement de l'inquiétude ou du rejet lorsqu'elle entend parler d'IA ?", reponse: 55, explication: "55 % de sentiments négatifs (45 % d'inquiétude, 10 % de rejet), contre 36 % en 2022. Les sentiments positifs tombent à 36 %.", page: 20 },
-  { question: "Quelle part des Français déclare avoir confiance dans l'intelligence artificielle ?", reponse: 34, explication: "34 %, contre 45 % en 2022. Dans le même temps, 75 % pensent que l'IA sera utile dans le domaine de la santé.", page: 21 },
-  { question: "Pour obtenir une information auprès d'un service public, quelle part préfère un humain aux horaires d'ouverture plutôt qu'une IA disponible à toute heure ?", reponse: 81, explication: "81 % préfèrent un humain capable d'apporter plus d'explications ; 19 % une messagerie instantanée avec une IA. Stable depuis 2024.", page: 24 },
-  { question: "Quelle part souhaite que le service public garde le contrôle le plus strict sur ses outils d'IA, même s'ils perdent en efficacité ?", reponse: 87, explication: "87 %, en hausse régulière (84 % en 2024, 86 % en 2025). Seuls 13 % privilégient la performance.", page: 23 },
-  { question: "Quelle part juge prioritaire ou important d'être informée à chaque fois qu'une IA est utilisée pour produire une décision, un document ou une illustration ?", reponse: 93, explication: "93 %, dont 69 % qui jugent cela prioritaire. C'est le premier levier de confiance testé.", page: 25 },
-  { question: "Quelle part juge prioritaire ou importante la formation systématique des fonctionnaires à l'IA ?", reponse: 83, explication: "83 %, dont 45 % qui la jugent prioritaire.", page: 25 },
-  { question: "Quelle part des Français fait confiance à sa commune ou intercommunalité pour la gestion et l'utilisation des données ?", reponse: 64, explication: "64 %, contre 44 % pour l'État et 11 % pour les réseaux sociaux. La proximité reste un atout, même si le chiffre était de 69 % en 2022.", page: 10 },
-  { question: "Quelle part des Français voit bien de quoi il s'agit quand on parle de « souveraineté numérique » ?", reponse: 29, explication: "29 % seulement, alors que 61 % en ont entendu parler. Pourtant 91 % jugent prioritaire ou important le choix de logiciels français ou européens.", page: 28 },
-  { question: "Quelle part estime que le service public doit limiter son recours à l'IA à cause de l'impact environnemental, même si cela réduit son efficacité ?", reponse: 79, explication: "79 %, en hausse de 4 points sur un an. 75 % estiment toutefois que cette limitation doit s'imposer avant tout aux géants du numérique.", page: 26 },
-  { question: "Quelle part se sent bien informée sur l'utilisation de ses données personnelles par les acteurs publics ?", reponse: 33, explication: "33 %, contre 41 % en 2022. Le déficit d'information reste le premier chantier.", page: 9 },
-];
-
-export const pistesDiscussion: Record<"donnees" | "ia" | "souverainete", string[]> = {
-  donnees: [
-    "Votre collectivité explique-t-elle quelque part, en langage clair, quelles données elle collecte et pourquoi ?",
-    "64 % de confiance pour la commune, 44 % pour l'État : comment préserver ce capital dans vos projets ?",
-    "Savez-vous où sont hébergées les données de vos principaux logiciels métiers ?",
-  ],
-  ia: [
-    "Aujourd'hui, un usager peut-il savoir qu'une IA a contribué à un courrier, une décision ou une illustration de votre collectivité ?",
-    "Votre structure a-t-elle une charte IA ? Qui l'a rédigée, qui la connaît ?",
-    "81 % préfèrent un humain au guichet : quelle place donner à un agent conversationnel sans dégrader l'accueil ?",
-    "Comment arbitrer entre l'utilité d'un cas d'usage et son impact environnemental ?",
-  ],
-  souverainete: [
-    "Parmi vos outils d'IA, lesquels sont français ou européens ? Lesquels ne le sont pas, et pour quelles raisons ?",
-    "Seuls 29 % voient ce qu'est la souveraineté numérique : comment en parler simplement à vos élus et à vos habitants ?",
-    "Seriez-vous prêts à ce que des données de votre collectivité servent à entraîner une IA française ou européenne ? À quelles conditions ?",
-  ],
-};
-
-export interface Recommandation {
-  titre: string;
-  texte: string;
-  icone: "transparence" | "charte" | "humain" | "souverainete" | "formation" | "sobriete";
-}
-
-export const recommandations: Recommandation[] = [
-  { icone: "transparence", titre: "Dire quand l'IA est utilisée", texte: "Signalez chaque usage d'une IA dans une décision, un document ou une illustration. 93 % des Français le jugent prioritaire ou important, et seuls 33 % se sentent bien informés sur l'usage de leurs données par les acteurs publics." },
-  { icone: "charte", titre: "Adopter et publier une charte IA", texte: "Fixez les usages autorisés et interdits, et rendez la charte publique. 92 % l'attendent ; 91 % souhaitent aussi des contrôles par un organisme indépendant sur les données." },
-  { icone: "humain", titre: "Garder l'humain aux commandes", texte: "87 % veulent un contrôle strict des outils d'IA, même au prix de l'efficacité, et 81 % préfèrent un humain pour obtenir une information. L'IA doit assister l'agent, pas remplacer le guichet." },
-  { icone: "souverainete", titre: "Privilégier des solutions souveraines", texte: "94 % veulent un hébergement des données en France ou en Europe, 91 % des logiciels français ou européens, 89 % des systèmes d'IA français ou européens." },
-  { icone: "formation", titre: "Former tous les agents", texte: "83 % des Français jugent prioritaire ou importante la formation systématique des fonctionnaires à l'IA, et 81 % le recrutement d'experts." },
-  { icone: "sobriete", titre: "Choisir des usages utiles et sobres", texte: "79 % souhaitent que le service public limite son recours à l'IA pour des raisons environnementales. Priorisez les domaines où l'utilité est reconnue : énergie (80 %), eau (77 %), santé (75 %)." },
 ];

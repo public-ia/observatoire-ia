@@ -8,9 +8,9 @@ export const Footer = () => {
           <div>
             <h3 className="text-2xl font-bold mb-6 tracking-tight">Source des données et de l'analyse</h3>
             <p className="text-accent-foreground/90 leading-relaxed mb-6 text-lg">
-              « {edition.titreEtude} », enquête {edition.institut} pour l'{edition.commanditaire},{" "}
-              {edition.date.toLowerCase()}. Ce site est une adaptation réalisée par Public IA à des fins pédagogiques ;
-              les questions de discussion et les recommandations sont proposées par Public IA.
+              {edition.barometre.nom} ({edition.barometre.numero}), « {edition.barometre.titre} », et{" "}
+              {edition.ipsos.nom.toLowerCase()}. Ce site est une adaptation réalisée par Public IA à des fins
+              pédagogiques ; le quiz, les questions de discussion et les recommandations sont proposés par Public IA.
             </p>
             <a
               href={edition.lienObservatoire}
@@ -27,16 +27,16 @@ export const Footer = () => {
             <h3 className="text-2xl font-bold mb-6 tracking-tight">Édition {edition.annee}</h3>
             <ul className="space-y-3 text-accent-foreground/90 text-lg">
               <li className="flex items-center gap-2">
-                <span className="text-primary font-bold">•</span> Les données personnelles
+                <span className="text-primary font-bold">•</span> La data territoriale
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-primary font-bold">•</span> L'intelligence artificielle
+                <span className="text-primary font-bold">•</span> La souveraineté
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-primary font-bold">•</span> La souveraineté numérique
+                <span className="text-primary font-bold">•</span> L'IA territoriale
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-primary font-bold">•</span> Quiz et pistes de discussion
+                <span className="text-primary font-bold">•</span> Qu'en pensent les Français ?
               </li>
             </ul>
           </div>

@@ -1,0 +1,70 @@
+export type Annee = "2025" | "2024" | "2023" | "2022";
+export type Rappels = Partial<Record<Annee, number>>;
+export type Source = "barometre" | "ipsos";
+
+export type Palette = "accord4" | "niveau3" | "impact3" | "binaire" | "avancement4" | "progres2";
+
+export interface Item {
+  label: string;
+  /** Détail des réponses, dans l'ordre de `echelle`. */
+  values: number[];
+  /** Indicateur de synthèse (ex. % confiance). */
+  total: number;
+  /** Même indicateur lors des éditions précédentes. */
+  rappels?: Rappels;
+  /** Item absent des éditions précédentes. */
+  nouveau?: boolean;
+  /** Affirmation exprimant une crainte (mise en évidence). */
+  crainte?: boolean;
+}
+
+/** Graphique en barres empilées : répartition des réponses pour chaque ligne. */
+export interface Question {
+  type?: "empile";
+  id: string;
+  source: Source;
+  page: number;
+  /** Enseignement principal. */
+  titre: string;
+  /** Libellé exact de la question posée (enquête Ipsos). */
+  question?: string;
+  /** Intitulé du graphique (baromètre). */
+  graphique?: string;
+  /** Analyse tirée du rapport. */
+  commentaire?: string;
+  base?: string;
+  echelle: string[];
+  palette: Palette;
+  totalLabel: string;
+  items: Item[];
+  /** Remarque de lecture. */
+  note?: string;
+}
+
+/** Graphique en barres simples ou comparées (une ou deux séries). */
+export interface Barres {
+  type: "barres";
+  id: string;
+  source: Source;
+  page: number;
+  titre: string;
+  graphique: string;
+  commentaire?: string;
+  base?: string;
+  /** Nom des séries, dans l'ordre des valeurs. La dernière est la série mise en avant. */
+  series: string[];
+  items: Array<{ label: string; values: number[] }>;
+  note?: string;
+}
+
+export interface Focus {
+  type: "focus";
+  id: string;
+  page: number;
+  titre: string;
+  /** Étude complémentaire dont est tiré le focus. */
+  etude: string;
+  points: string[];
+}
+
+export type Bloc = Question | Barres | Focus;

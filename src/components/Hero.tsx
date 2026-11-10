@@ -32,14 +32,14 @@ export const Hero = () => {
             className="h-28 md:h-40 mx-auto mb-10 drop-shadow-2xl transition-transform hover:scale-105 duration-300" 
           />
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-[1.1] tracking-tight">
-            Les Français, les données et l'IA publique
+            Les collectivités, la donnée et l'IA
           </h1>
           <p className="text-xl md:text-3xl mb-6 text-accent-foreground/90 font-light leading-relaxed max-w-3xl mx-auto">
-            Édition {edition.annee} : ce que les citoyens attendent des acteurs publics
+            {edition.barometre.nom} : une année de consolidation, et ce qu'en pensent les Français
           </p>
           <p className="text-base md:text-lg text-accent-foreground/80 max-w-3xl mx-auto">
-            D'après l'enquête {edition.institut} pour l'{edition.commanditaire}, {edition.date.toLowerCase()} —{" "}
-            1 000 Français interrogés
+            {edition.barometre.numero} — 382 collectivités interrogées, complétées par une enquête {" "}
+            Ipsos bva auprès de 1 000 Français
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">

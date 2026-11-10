@@ -3,7 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { ChevronLeft, ChevronRight, Eye, RotateCcw } from "lucide-react";
-import { edition, quiz } from "@/data";
+import { quiz } from "@/data";
+import { referenceSource } from "./Blocs";
 
 export const Quiz = () => {
   const [index, setIndex] = useState(0);
@@ -33,7 +34,7 @@ export const Quiz = () => {
           <Card className="border-0 bg-card text-card-foreground shadow-elegant-lg">
             <CardContent className="p-6 md:p-10">
               <p className="text-sm font-bold uppercase tracking-widest text-primary mb-4">
-                Question {index + 1} / {quiz.length}
+                Question {index + 1} / {quiz.length} — {item.source === "barometre" ? "Collectivités" : "Français"}
               </p>
               <p className="text-2xl md:text-3xl font-semibold text-accent leading-snug mb-8">{item.question}</p>
 
@@ -61,7 +62,7 @@ export const Quiz = () => {
                   </div>
                   <p className="text-lg text-foreground leading-relaxed">{item.explication}</p>
                   <p className="text-xs text-muted-foreground/80 mt-3">
-                    Source : {edition.institut} pour l'{edition.commanditaire}, {edition.date.toLowerCase()}, p. {item.page}.
+                    Source : {referenceSource(item.source, item.page)}.
                   </p>
                 </div>
               ) : (
