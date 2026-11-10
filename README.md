@@ -1,4 +1,20 @@
-# Welcome to your Lovable project
+# Observatoire IA — Public IA
+
+Site pédagogique présentant l'enquête Ipsos bva pour l'Observatoire Data Publica sur la perception
+des Français de la gestion des données et de l'utilisation de l'IA par les acteurs publics.
+Publié sur https://observatoire.public-ia.fr via Lovable.
+
+## Mettre à jour pour une nouvelle édition
+
+Tous les chiffres sont dans `src/data/etude2026.ts` (un champ `page` renvoie à la page du rapport).
+
+1. Dupliquer ce fichier (ex. `etude2027.ts`) et mettre à jour les valeurs et les rappels.
+2. Changer l'import dans `src/data/index.ts`.
+3. Mettre à jour le titre et la description dans `index.html`.
+
+Lovable ne synchronise que la branche `main` : travailler sur une branche, fusionner, puis publier depuis Lovable.
+
+# Projet Lovable
 
 ## Project info
 

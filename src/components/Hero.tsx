@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
 import logo from "@/assets/logo-public-ia.png";
+import { edition } from "@/data";
 
 export const Hero = () => {
   const scrollToContent = () => {
@@ -30,11 +31,15 @@ export const Hero = () => {
             alt="Public IA" 
             className="h-28 md:h-40 mx-auto mb-10 drop-shadow-2xl transition-transform hover:scale-105 duration-300" 
           />
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-[1.1] tracking-tight">
-            Données et IA dans les Territoires
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-[1.1] tracking-tight">
+            Les Français, les données et l'IA publique
           </h1>
-          <p className="text-xl md:text-3xl mb-12 text-accent-foreground/90 font-light leading-relaxed max-w-3xl mx-auto">
-            Baromètre 2025 : Concilier pratiques administratives et attentes citoyennes
+          <p className="text-xl md:text-3xl mb-6 text-accent-foreground/90 font-light leading-relaxed max-w-3xl mx-auto">
+            Édition {edition.annee} : ce que les citoyens attendent des acteurs publics
+          </p>
+          <p className="text-base md:text-lg text-accent-foreground/80 max-w-3xl mx-auto">
+            D'après l'enquête {edition.institut} pour l'{edition.commanditaire}, {edition.date.toLowerCase()} —{" "}
+            1 000 Français interrogés
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
@@ -42,7 +47,7 @@ export const Hero = () => {
               size="lg"
               variant="default"
               onClick={scrollToContent}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-elegant hover:shadow-elegant-lg transition-all duration-300 text-base md:text-lg px-8 py-6 hover:scale-105 hover:-translate-y-1"
+              className="bg-primary hover:bg-primary/90 text-accent font-bold shadow-elegant hover:shadow-elegant-lg transition-all duration-300 text-base md:text-lg px-8 py-6 hover:scale-105 hover:-translate-y-1"
             >
               Découvrir les résultats
               <ArrowDown className="ml-2 h-5 w-5 animate-bounce" />

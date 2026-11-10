@@ -1,28 +1,17 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-const navItems = [{
-  id: "accueil",
-  label: "Accueil"
-}, {
-  id: "chiffres-cles",
-  label: "Chiffres clés"
-}, {
-  id: "etat-des-lieux",
-  label: "État des lieux"
-}, {
-  id: "usages-ia",
-  label: "Usages IA"
-}, {
-  id: "gouvernance",
-  label: "Gouvernance"
-}, {
-  id: "perception-citoyens",
-  label: "Perception citoyens"
-}, {
-  id: "recommandations",
-  label: "Recommandations"
-}];
+import { edition } from "@/data";
+const navItems = [
+  { id: "accueil", label: "Accueil" },
+  { id: "chiffres-cles", label: "Chiffres clés" },
+  { id: "quiz", label: "Quiz" },
+  { id: "donnees", label: "Données" },
+  { id: "ia", label: "IA" },
+  { id: "souverainete", label: "Souveraineté" },
+  { id: "recommandations", label: "Recommandations" },
+  { id: "methodologie", label: "Méthodologie" },
+];
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("accueil");
@@ -58,28 +47,28 @@ export const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo/Title */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-accent-foreground tracking-tight">Observatoire IA 2025</h1>
+            <p className="text-xl md:text-2xl font-bold text-accent-foreground tracking-tight">Observatoire IA <span className="text-primary">{edition.annee}</span></p>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-2">
-            {navItems.map(item => <button key={item.id} onClick={() => scrollToSection(item.id)} className={`px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 ${activeSection === item.id ? "bg-primary text-primary-foreground shadow-glow" : "text-accent-foreground hover:bg-accent-foreground/10 hover:scale-105"}`}>
+          <div className="hidden lg:flex items-center space-x-1">
+            {navItems.map(item => <button key={item.id} onClick={() => scrollToSection(item.id)} className={`px-3 xl:px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors duration-300 ${activeSection === item.id ? "bg-primary text-accent" : "text-accent-foreground hover:bg-accent-foreground/10"}`}>
                 {item.label}
               </button>)}
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
-            <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)} className="text-accent-foreground hover:bg-accent-foreground/10">
+          <div className="lg:hidden">
+            <Button variant="ghost" size="icon" aria-label="Menu" onClick={() => setIsOpen(!isOpen)} className="text-accent-foreground hover:bg-accent-foreground/10">
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </Button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && <div className="md:hidden pb-4">
+        {isOpen && <div className="lg:hidden pb-4">
             <div className="flex flex-col space-y-2">
-              {navItems.map(item => <button key={item.id} onClick={() => scrollToSection(item.id)} className={`px-5 py-3 rounded-lg text-sm font-semibold text-left transition-all duration-300 ${activeSection === item.id ? "bg-primary text-primary-foreground shadow-glow" : "text-accent-foreground hover:bg-accent-foreground/10"}`}>
+              {navItems.map(item => <button key={item.id} onClick={() => scrollToSection(item.id)} className={`px-5 py-3 rounded-lg text-sm font-semibold text-left transition-colors duration-300 ${activeSection === item.id ? "bg-primary text-accent" : "text-accent-foreground hover:bg-accent-foreground/10"}`}>
                   {item.label}
                 </button>)}
             </div>
