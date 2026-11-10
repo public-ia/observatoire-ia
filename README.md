@@ -199,6 +199,7 @@ Le défilement fluide repose sur [Lenis](https://lenis.darkroom.engineering/) et
 | Problème | Solution |
 |---|---|
 | `npm install` échoue avec `ERESOLVE` | Utiliser `npm ci`, ou `npm install --legacy-peer-deps`. Le conflit vient de dépendances de développement et n'affecte pas le site. |
+| `npm run dev` échoue avec `EAFNOSUPPORT` | La machine n'a pas d'IPv6 : lancer `npm run dev -- --host 127.0.0.1`. |
 | Le port 8080 est déjà utilisé | Lancer `npm run dev -- --port 3000`, ou fermer l'autre programme. |
 | Le site en ligne n'a pas changé après une fusion | Cliquer sur « Publier » dans Lovable ; la fusion seule ne suffit pas. |
 | Les chiffres en orbite n'apparaissent pas | La fenêtre est trop petite, ou la réduction des mouvements est activée dans le système : la grille s'affiche à la place. |
