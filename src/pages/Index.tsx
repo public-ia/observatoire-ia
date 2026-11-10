@@ -8,10 +8,14 @@ import { Quiz } from "@/components/Quiz";
 import { Recommendations } from "@/components/Recommendations";
 import { Methodology } from "@/components/Methodology";
 import { Footer } from "@/components/Footer";
+import { useScrollAnimations } from "@/hooks/use-scroll-animations";
 import { dataTerritoriale, iaTerritoriale, souverainete, pistesDiscussion } from "@/data";
 
-const Index = () => (
+const Index = () => {
+  useScrollAnimations();
+  return (
   <div className="min-h-screen">
+    <main className="relative z-10 bg-background">
     <Navigation />
     <section id="accueil">
       <Hero />
@@ -72,8 +76,10 @@ const Index = () => (
     <section id="methodologie">
       <Methodology />
     </section>
+    </main>
     <Footer />
   </div>
-);
+  );
+};
 
 export default Index;

@@ -65,7 +65,7 @@ interface CadreProps {
 
 /** Habillage commun : enseignement, intitulé, analyse, graphique, source. */
 const Cadre = ({ bloc, pied, children }: CadreProps) => (
-  <Card className="border-2 border-border bg-card shadow-md">
+  <Card className="reveal border-2 border-border bg-card shadow-md">
     <CardHeader className="pb-4">
       <CardTitle className="text-xl md:text-2xl text-accent leading-snug">{bloc.titre}</CardTitle>
       {bloc.commentaire && <p className="text-base md:text-lg text-foreground leading-relaxed pt-2">{bloc.commentaire}</p>}
@@ -207,7 +207,7 @@ export const BarresBlock = ({ b }: { b: Barres }) => {
 };
 
 export const FocusBlock = ({ f }: { f: Focus }) => (
-  <aside className="rounded-xl border-2 border-accent/20 bg-accent/5 p-6 md:p-8">
+  <aside className="reveal rounded-xl border-2 border-accent/20 bg-accent/5 p-6 md:p-8">
     <p className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-accent/80 mb-2">
       <BookOpen className="h-4 w-4" />
       Regard complémentaire

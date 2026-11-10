@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { edition } from "@/data";
+import { scrollToTarget } from "@/lib/motion";
 const navItems = [
   { id: "accueil", label: "Accueil" },
   { id: "chiffres-cles", label: "Chiffres clés" },
@@ -28,18 +29,13 @@ export const Navigation = () => {
         }
       }
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      const offset = 80;
-      const elementPosition = element.offsetTop - offset;
-      window.scrollTo({
-        top: elementPosition,
-        behavior: "smooth"
-      });
+      scrollToTarget(element, -80);
       setIsOpen(false);
     }
   };
@@ -75,5 +71,6 @@ export const Navigation = () => {
             </div>
           </div>}
       </div>
+      <div id="scroll-progress" className="absolute bottom-0 left-0 h-1 w-full bg-primary" aria-hidden />
     </nav>;
 };

@@ -18,7 +18,7 @@ export const Recommendations = () => (
           {recommandations.map((r) => {
             const Icone = ICONES[r.icone];
             return (
-              <Card key={r.titre} className="border-2 border-primary/20 hover:border-primary transition-colors duration-300 bg-gradient-to-br from-card to-primary/5">
+              <Card key={r.titre} className="reveal border-2 border-primary/20 hover:border-primary transition-colors duration-300 bg-gradient-to-br from-card to-primary/5">
                 <CardHeader className="pb-3">
                   <div className="flex items-center gap-4">
                     <div className="p-3 bg-primary/10 rounded-xl">

@@ -11,7 +11,7 @@ const COULEURS = {
 export const SentimentsIA = () => {
   const { titre, question, items, positifs, negatifs, page } = sentimentsIA;
   return (
-    <Card className="border-2 border-border bg-card shadow-md">
+    <Card className="reveal border-2 border-border bg-card shadow-md">
       <CardHeader className="pb-4">
         <CardTitle className="text-xl md:text-2xl text-accent leading-snug">{titre}</CardTitle>
         <p className="text-sm md:text-base text-muted-foreground italic leading-relaxed pt-2">
