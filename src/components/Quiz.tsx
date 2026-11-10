@@ -31,7 +31,7 @@ export const Quiz = () => {
             </p>
           </div>
 
-          <Card className="border-0 bg-card text-card-foreground shadow-elegant-lg">
+          <Card className="reveal border-0 bg-card text-card-foreground shadow-elegant-lg">
             <CardContent className="p-6 md:p-10">
               <p className="text-sm font-bold uppercase tracking-widest text-primary mb-4">
                 Question {index + 1} / {quiz.length} — {item.source === "barometre" ? "Collectivités" : "Français"}

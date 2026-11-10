@@ -105,3 +105,116 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+/* ------------------------------------------------------------------ */
+/* Effets de défilement : rideau, halo, grille, bandeau, texte géant   */
+/* ------------------------------------------------------------------ */
+
+@layer components {
+  /* Pied de page dévoilé « en rideau » : fixe derrière la page sur grand écran. */
+  @media (min-width: 768px) and (min-height: 700px) and (prefers-reduced-motion: no-preference) {
+    .curtain {
+      height: 100svh;
+      clip-path: inset(0);
+    }
+    .curtain > footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      height: 100svh;
+    }
+  }
+
+  .aurora {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(90px);
+    opacity: 0.55;
+    will-change: transform;
+  }
+  .aurora-a {
+    width: 55vw;
+    height: 55vw;
+    max-width: 760px;
+    max-height: 760px;
+    left: -10%;
+    bottom: -25%;
+    background: hsl(28 92% 56% / 0.55);
+    animation: aurora-drift 16s ease-in-out infinite alternate;
+  }
+  .aurora-b {
+    width: 50vw;
+    height: 50vw;
+    max-width: 700px;
+    max-height: 700px;
+    right: -10%;
+    top: -20%;
+    background: hsl(200 80% 45% / 0.6);
+    animation: aurora-drift 20s ease-in-out infinite alternate-reverse;
+  }
+
+  .grid-pattern {
+    background-image:
+      linear-gradient(to right, hsl(0 0% 100% / 0.07) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(0 0% 100% / 0.07) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 100%);
+  }
+
+  .marquee {
+    animation: marquee 40s linear infinite;
+  }
+
+  .giant-text {
+    font-size: clamp(2rem, 12.5vw, 15rem);
+    white-space: nowrap;
+    background: linear-gradient(to bottom, hsl(0 0% 100% / 0.9), hsl(0 0% 100% / 0.08));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  #scroll-progress {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+}
+
+@keyframes aurora-drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(8%, -6%, 0) scale(1.15);
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-25%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora,
+  .marquee {
+    animation: none;
+  }
+}
+
+/* Chiffres clés en orbite : balayage du texte à chaque changement. */
+.orbit-wipe {
+  animation: orbit-wipe 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes orbit-wipe {
+  from {
+    clip-path: inset(0 100% 0 0);
+    transform: translateX(-16px);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    transform: translateX(0);
+  }
+}

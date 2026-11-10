@@ -45,7 +45,7 @@ export const Methodology = () => (
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {etudes.map(({ icone: Icone, role, nom, titre, lignes }) => (
-            <Card key={nom} className="border-2 border-border bg-card">
+            <Card key={nom} className="reveal border-2 border-border bg-card">
               <CardContent className="p-6 md:p-8">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="p-3 bg-primary/10 rounded-xl h-fit">
