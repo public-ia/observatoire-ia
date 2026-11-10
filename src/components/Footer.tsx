@@ -1,4 +1,5 @@
 import { ExternalLink } from "lucide-react";
+import { edition } from "@/data";
 export const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-accent via-accent to-[hsl(200,60%,30%)] text-accent-foreground py-16 border-t border-accent-foreground/10">
@@ -7,34 +8,35 @@ export const Footer = () => {
           <div>
             <h3 className="text-2xl font-bold mb-6 tracking-tight">Source des données et de l'analyse</h3>
             <p className="text-accent-foreground/90 leading-relaxed mb-6 text-lg">
-              Cahier de l’Observatoire Data Publica, coordonné par Jacques Priol et CIVITEO. Ce site est une adaptation
-              technique réalisée par Public IA à des fins pédagogiques, sous licence CC-BY-NC 4.0.
+              {edition.barometre.nom} ({edition.barometre.numero}), « {edition.barometre.titre} », et{" "}
+              {edition.ipsos.nom.toLowerCase()}. Ce site est une adaptation réalisée par Public IA à des fins
+              pédagogiques ; le quiz, les questions de discussion et les recommandations sont proposés par Public IA.
             </p>
             <a
-              href="https://observatoire.data-publica.eu/wp-content/uploads/2025/11/Cahier-OBS-DATA-PUBLICA-04-vdef.pdf"
+              href={edition.lienObservatoire}
               target="_blank"
-              download
-              className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-glow hover:shadow-glow-lg hover:scale-105"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-accent px-6 py-3 rounded-lg font-semibold transition-colors duration-300"
             >
-              Télécharger l'étude (PDF)
+              Observatoire Data Publica
               <ExternalLink className="h-5 w-5" />
             </a>
           </div>
 
           <div>
-            <h3 className="text-2xl font-bold mb-6 tracking-tight">Études 2025</h3>
+            <h3 className="text-2xl font-bold mb-6 tracking-tight">Édition {edition.annee}</h3>
             <ul className="space-y-3 text-accent-foreground/90 text-lg">
               <li className="flex items-center gap-2">
-                <span className="text-primary font-bold">•</span> Baromètre des collectivités.
+                <span className="text-primary font-bold">•</span> La data territoriale
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-primary font-bold">•</span> Perception des Français.
+                <span className="text-primary font-bold">•</span> La souveraineté
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-primary font-bold">•</span> Gestion des données publiques.
+                <span className="text-primary font-bold">•</span> L'IA territoriale
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-primary font-bold">•</span> Utilisation de l'IA.
+                <span className="text-primary font-bold">•</span> Qu'en pensent les Français ?
               </li>
             </ul>
           </div>
@@ -54,7 +56,7 @@ export const Footer = () => {
         </div>
 
         <div className="border-t border-accent-foreground/20 pt-10 text-center">
-          <p className="text-accent-foreground/80 text-lg">© 2025 Public IA - Tous droits réservés</p>
+          <p className="text-accent-foreground/80 text-lg">© {edition.annee} Public IA - Tous droits réservés</p>
         </div>
       </div>
     </footer>

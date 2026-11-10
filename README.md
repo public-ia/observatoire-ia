@@ -1,4 +1,24 @@
-# Welcome to your Lovable project
+# Observatoire IA — Public IA
+
+Site pédagogique présentant le baromètre de l'Observatoire Data Publica sur la donnée et l'IA dans les
+collectivités territoriales, complété par l'enquête Ipsos bva sur la perception des Français.
+Publié sur https://observatoire.public-ia.fr via Lovable.
+
+## Mettre à jour pour une nouvelle édition
+
+Tous les chiffres sont dans `src/data/` (un champ `page` renvoie à la page du rapport) :
+
+- `barometre2026.ts` : baromètre des collectivités, source principale (data, souveraineté, IA) ;
+- `ipsos2026.ts` : enquête Ipsos auprès des Français ;
+- `edition2026.ts` : méthodologie, chiffres clés, tendances, quiz, pistes de discussion, recommandations.
+
+1. Dupliquer ces fichiers pour la nouvelle année et mettre à jour les valeurs.
+2. Changer les imports dans `src/data/index.ts`.
+3. Mettre à jour le titre et la description dans `index.html`.
+
+Lovable ne synchronise que la branche `main` : travailler sur une branche, fusionner, puis publier depuis Lovable.
+
+# Projet Lovable
 
 ## Project info
 
