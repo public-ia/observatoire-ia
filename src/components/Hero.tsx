@@ -33,8 +33,9 @@ export const Hero = () => {
             {edition.barometre.nom} : une année de consolidation, et ce qu'en pensent les Français
           </p>
           <p className="text-base md:text-lg text-accent-foreground/80 max-w-3xl mx-auto">
-            {edition.barometre.numero} — 382 collectivités interrogées, complétées par une enquête {" "}
-            Ipsos bva auprès de 1 000 Français
+            {edition.barometre.numero} : 382 collectivités interrogées,{" "}
+            <br />
+            complétées par une enquête{" "}Ipsos bva auprès de 1 000 Français
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
