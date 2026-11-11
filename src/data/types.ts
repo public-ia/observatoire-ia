@@ -67,4 +67,25 @@ export interface Focus {
   points: string[];
 }
 
-export type Bloc = Question | Barres | Focus;
+/** Carte proportionnelle (treemap) : la surface de chaque case suit sa valeur. */
+export interface Treemap {
+  type: "treemap";
+  id: string;
+  source: Source;
+  page: number;
+  titre: string;
+  graphique: string;
+  commentaire?: string;
+  base?: string;
+  items: Array<{
+    label: string;
+    value: number;
+    /** Valeur d'une édition précédente, quand le rapport la donne. */
+    rappel?: { annee: string; value: number };
+    /** Précision tirée du rapport. */
+    detail?: string;
+  }>;
+  note?: string;
+}
+
+export type Bloc = Question | Barres | Focus | Treemap;
