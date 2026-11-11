@@ -88,4 +88,27 @@ export interface Treemap {
   note?: string;
 }
 
-export type Bloc = Question | Barres | Focus | Treemap;
+export type LogoOutil = "copilot" | "mistral" | "claude" | "chatgpt" | "delibia" | "gemini";
+
+/** Barres verticales accompagnées du logo de chaque outil. */
+export interface Outils {
+  type: "outils";
+  id: string;
+  source: Source;
+  page: number;
+  titre: string;
+  graphique: string;
+  commentaire?: string;
+  base?: string;
+  items: Array<{
+    label: string;
+    editeur: string;
+    /** Pays du siège de l'éditeur. */
+    pays: string;
+    value: number;
+    logo: LogoOutil;
+  }>;
+  note?: string;
+}
+
+export type Bloc = Question | Barres | Focus | Treemap | Outils;

@@ -444,7 +444,7 @@ export const iaTerritoriale: Bloc[] = [
     ],
   },
   {
-    type: "barres",
+    type: "outils",
     id: "outils-ia",
     source: "barometre",
     page: 36,
@@ -452,15 +452,15 @@ export const iaTerritoriale: Bloc[] = [
     graphique: "Les outils autorisés ou recommandés",
     base: "collectivités ayant publié une liste d'outils autorisés ou interdits",
     commentaire:
-      "30 % des collectivités ont fait le choix d'encadrer et d'autoriser un ou plusieurs outils. Le choix de Mistral relève plus certainement d'un choix de souveraineté numérique, quand Microsoft intègre systématiquement son IA dans les suites bureautiques. DelibIA, entreprise française qui intègre Mistral, est citée spontanément par 18 % des collectivités.",
-    series: ["2026"],
+      "30 % des collectivités ont fait le choix d'encadrer et d'autoriser (ou de mettre à disposition) un ou plusieurs outils. Parmi celles-ci, elles sont nombreuses à privilégier Microsoft Copilot (55 %), mais aussi Mistral (52 %). Microsoft a une démarche commerciale très offensive, intégrant systématiquement son IA dans les suites bureautiques, là où le choix de Mistral relève plus certainement d'un choix de souveraineté numérique. On notera la percée de l'entreprise française DelibIA, citée spontanément par 18 % des collectivités, qui intègre Mistral dans ses briques de service IA.",
+    note: "Plusieurs réponses possibles : le total dépasse 100 %. Les logos sont la propriété de leurs détenteurs respectifs.",
     items: [
-      { label: "Copilot", values: [55] },
-      { label: "Mistral", values: [52] },
-      { label: "Claude", values: [23] },
-      { label: "ChatGPT", values: [21] },
-      { label: "DelibIA", values: [18] },
-      { label: "Gemini", values: [16] },
+      { label: "Copilot", editeur: "Microsoft", pays: "États-Unis", value: 55, logo: "copilot" },
+      { label: "Mistral", editeur: "Mistral AI", pays: "France", value: 52, logo: "mistral" },
+      { label: "Claude", editeur: "Anthropic", pays: "États-Unis", value: 23, logo: "claude" },
+      { label: "ChatGPT", editeur: "OpenAI", pays: "États-Unis", value: 21, logo: "chatgpt" },
+      { label: "DelibIA", editeur: "DelibIA", pays: "France", value: 18, logo: "delibia" },
+      { label: "Gemini", editeur: "Google", pays: "États-Unis", value: 16, logo: "gemini" },
     ],
   },
   {
