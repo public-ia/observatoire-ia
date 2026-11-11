@@ -4,7 +4,8 @@ import { Badge } from "@/components/ui/badge";
 import { BookOpen } from "lucide-react";
 import { TreemapBlock } from "./TreemapBlock";
 import { OutilsBlock } from "./OutilsBlock";
-import { SOURCES, type Barres, type Bloc, type Outils, type Treemap, type Focus, type Palette, type Question, type Rappels, type Source } from "@/data";
+import { SankeyBlock } from "./SankeyBlock";
+import { SOURCES, type Barres, type Bloc, type Outils, type Sankey, type Treemap, type Focus, type Palette, type Question, type Rappels, type Source } from "@/data";
 
 const PALETTES: Record<Palette, string[]> = {
   accord4: [
@@ -60,7 +61,7 @@ const RappelsLigne = ({ rappels }: { rappels?: Rappels }) => {
 };
 
 interface CadreProps {
-  bloc: Question | Barres | Treemap | Outils;
+  bloc: Question | Barres | Treemap | Outils | Sankey;
   pied: string;
   children: ReactNode;
 }
@@ -234,6 +235,8 @@ export const BlocList = ({ blocs }: { blocs: Bloc[] }) => (
     {blocs.map((bloc) =>
       bloc.type === "barres" ? (
         <BarresBlock key={bloc.id} b={bloc} />
+      ) : bloc.type === "sankey" ? (
+        <SankeyBlock key={bloc.id} s={bloc} />
       ) : bloc.type === "outils" ? (
         <OutilsBlock key={bloc.id} o={bloc} />
       ) : bloc.type === "treemap" ? (

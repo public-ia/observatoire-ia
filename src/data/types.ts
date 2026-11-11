@@ -111,4 +111,27 @@ export interface Outils {
   note?: string;
 }
 
-export type Bloc = Question | Barres | Focus | Treemap | Outils;
+/** Diagramme de flux (Sankey) : répartition des propositions de chaque origine entre plusieurs sujets. */
+export interface Sankey {
+  type: "sankey";
+  id: string;
+  source: Source;
+  page: number;
+  titre: string;
+  graphique: string;
+  commentaire?: string;
+  base?: string;
+  /** Présentation générale affichée tant qu'aucun élément n'est sélectionné. */
+  synthese: string;
+  origines: Array<{ label: string; couleur: string; detail: string }>;
+  sujets: Array<{ label: string; court: string; couleur: string; detail: string }>;
+  /**
+   * Épaisseur des flux : une ligne par origine, une colonne par sujet,
+   * chaque ligne totalisant 100. Voir la remarque dans le fichier de données
+   * sur l'origine de ces valeurs.
+   */
+  flux: number[][];
+  note?: string;
+}
+
+export type Bloc = Question | Barres | Focus | Treemap | Outils | Sankey;
