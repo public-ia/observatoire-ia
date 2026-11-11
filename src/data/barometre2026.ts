@@ -633,15 +633,97 @@ export const iaTerritoriale: Bloc[] = [
     ),
   },
   {
-    type: "focus",
-    id: "focus-municipales-ia",
-    page: 47,
-    titre: "L'IA dans les programmes des municipales",
-    etude: "Étude Municipales 2026 de l'Observatoire — 130 propositions liées à l'IA dans les villes de plus de 100 000 habitants",
-    points: [
-      "Premier registre : l'IA dans la sécurité et la gestion urbaine (32 % des propositions), suivi de l'IA comme sujet de gouvernance et de principes (31 %).",
-      "Viennent ensuite le développement économique (15 %), la formation et l'inclusion (14 %) et la modernisation des services publics (9 %).",
-      "À gauche, les propositions se concentrent sur la gouvernance, la transparence et l'affirmation de principes ; à droite et à l'extrême droite, sur la sécurité et la gestion urbaine ; le pôle central met l'accent sur la modernisation du service public.",
+    type: "sankey",
+    id: "municipales-ia",
+    source: "barometre",
+    page: 48,
+    titre: "L'IA, un sujet partisan ?",
+    graphique: "Les sujets par bloc politique",
+    base: "130 propositions liées à l'IA dans les programmes des principales listes aux élections municipales de mars 2026, villes de plus de 100 000 habitants (étude Municipales 2026 de l'Observatoire)",
+    commentaire:
+      "Le diagramme répartit les engagements de campagne concernant l'IA de l'extrême gauche à l'extrême droite. À gauche, les propositions se concentrent sur la gouvernance, la transparence et l'affirmation de principes. Les listes du pôle central portent des propositions variées, autour de la modernisation du service public. À droite et à l'extrême droite, l'IA est d'abord un outil au service de la sécurité et de la gestion urbaine.",
+    synthese:
+      "Sur l'ensemble des 130 propositions : sécurité et gestion urbaine 32 %, gouvernance et principes 31 %, développement économique 15 %, formation et inclusion 14 %, modernisation des services publics 9 %.",
+    note: "Le rapport ne publie pas le détail chiffré de ce diagramme : l'épaisseur des flux a été relevée sur le graphique et reste approximative. Seuls deux pourcentages sont publiés (71 % et 63 %). L'Observatoire a classé les listes selon les données fournies par le ministère de l'Intérieur.",
+    origines: [
+      {
+        label: "Extrême gauche",
+        couleur: "#7B5C8E",
+        detail:
+          "À gauche, les propositions se concentrent sur les enjeux de gouvernance, de transparence et l'affirmation de principes (éthique, souveraineté, frugalité).",
+      },
+      {
+        label: "Écologistes gauche",
+        couleur: "#16899A",
+        detail:
+          "71 % des propositions des listes écologistes concernent la gouvernance, la transparence et l'affirmation de principes (éthique, souveraineté, frugalité).",
+      },
+      {
+        label: "Gauche",
+        couleur: "#8FB1EA",
+        detail:
+          "À gauche, les propositions se concentrent sur les enjeux de gouvernance, de transparence et l'affirmation de principes (éthique, souveraineté, frugalité).",
+      },
+      {
+        label: "Centre-droite",
+        couleur: "#E3CF52",
+        detail:
+          "Les listes du pôle central portent des propositions variées, mais concentrent leurs engagements autour du recours à l'IA pour la modernisation du service public (un sujet que l'on retrouve aussi, ici ou là, de gauche à droite).",
+      },
+      {
+        label: "Droite",
+        couleur: "#E28C2B",
+        detail:
+          "À droite et à l'extrême droite, l'IA est prioritairement envisagée comme un outil au service de la sécurité et de la gestion urbaine (détection comportementale, circulation, éclairage intelligent).",
+      },
+      {
+        label: "Extrême droite",
+        couleur: "#CC3A40",
+        detail:
+          "63 % des propositions issues de l'extrême droite concernent la sécurité : l'IA y est d'abord un outil au service de la sécurité et de la gestion urbaine.",
+      },
+    ],
+    sujets: [
+      {
+        label: "Gouvernance et principes",
+        court: "Gouvernance",
+        couleur: "#7FBF9E",
+        detail: "31 % de l'ensemble des propositions : encadrement, chartes, opposition à certains usages.",
+      },
+      {
+        label: "Formation, médiation et inclusion",
+        court: "Formation",
+        couleur: "#3F4A82",
+        detail: "14 % de l'ensemble des propositions : l'IA comme enjeu de formation et d'inclusion.",
+      },
+      {
+        label: "Modernisation des services publics",
+        court: "Modernisation",
+        couleur: "#0E9A8E",
+        detail: "9 % de l'ensemble des propositions : l'IA comme outil de modernisation des services publics.",
+      },
+      {
+        label: "Développement économique et innovation",
+        court: "Dév. économique",
+        couleur: "#466F8E",
+        detail: "15 % de l'ensemble des propositions : l'IA comme levier de développement économique.",
+      },
+      {
+        label: "Sécurité et gestion urbaine",
+        court: "Sécurité",
+        couleur: "#5E5E5E",
+        detail: "32 % de l'ensemble des propositions, le premier sujet : détection comportementale, éclairage, déchets, mobilité.",
+      },
+    ],
+    // Valeurs relevées sur l'image du rapport (p. 48), qui ne donne pas de chiffres :
+    // seuls 71 (écologistes → gouvernance) et 63 (extrême droite → sécurité) sont publiés.
+    flux: [
+      [100, 0, 0, 0, 0],
+      [71, 29, 0, 0, 0],
+      [46, 13, 13, 28, 0],
+      [8, 20, 15, 12, 45],
+      [8, 10, 4, 30, 48],
+      [7, 17, 5, 8, 63],
     ],
   },
 ];
